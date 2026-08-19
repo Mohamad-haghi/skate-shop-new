@@ -40,14 +40,12 @@ nav h1 {
     font-size: 22px;
 }
 
-
 .menu {
     display: flex;
     align-items: center;
 
     gap: 20px;
 }
-
 
 .menu a {
     color: white;
@@ -59,10 +57,8 @@ nav h1 {
     transition: 0.3s;
 }
 
-
 .menu a:hover {
     color: yellow;
-
     text-decoration: underline;
 }
 
@@ -87,7 +83,6 @@ nav h1 {
     color: white;
 
     background-color: #222;
-
     background-image: url("./IMG_0952.jpeg");
 
     background-size: cover;
@@ -95,7 +90,6 @@ nav h1 {
 
     position: relative;
 }
-
 
 .hero::before {
     content: "";
@@ -107,7 +101,6 @@ nav h1 {
     background: rgba(0, 0, 0, 0.55);
 }
 
-
 .hero h2,
 .hero p,
 .hero button {
@@ -115,20 +108,17 @@ nav h1 {
     z-index: 1;
 }
 
-
 .hero h2 {
     margin: 0 0 15px;
 
     font-size: 40px;
 }
 
-
 .hero p {
     margin: 0 0 30px;
 
     font-size: 20px;
 }
-
 
 .hero button {
     padding: 12px 25px;
@@ -148,10 +138,8 @@ nav h1 {
     transition: 0.3s;
 }
 
-
 .hero button:hover {
     background-color: black;
-
     color: white;
 }
 
@@ -166,13 +154,11 @@ nav h1 {
     text-align: center;
 }
 
-
 .products h2 {
     margin-bottom: 10px;
 
     font-size: 32px;
 }
-
 
 .products > p {
     margin-bottom: 40px;
@@ -224,7 +210,6 @@ nav h1 {
     transition: 0.3s;
 }
 
-
 .product-card:hover {
     transform: translateY(-8px);
 
@@ -232,12 +217,33 @@ nav h1 {
 }
 
 
+/* Product Images */
+
+.product-card img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    display: block;
+
+    margin-bottom: 20px;
+}
+
+
+/* Product Title */
+
 .product-card h3 {
     margin: 0 0 10px;
 
     font-size: 24px;
 }
 
+
+/* Product Text */
 
 .product-card p {
     margin: 8px 0;
@@ -247,6 +253,8 @@ nav h1 {
     color: #555;
 }
 
+
+/* Product Price */
 
 .product-card p:last-of-type {
     margin-top: 15px;
@@ -258,6 +266,8 @@ nav h1 {
     font-weight: bold;
 }
 
+
+/* Product Button */
 
 .product-card button {
     margin-top: 15px;
@@ -279,7 +289,6 @@ nav h1 {
     transition: 0.3s;
 }
 
-
 .product-card button:hover {
     background-color: yellow;
 
@@ -292,26 +301,24 @@ nav h1 {
 ========================= */
 
 footer {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 50px;
-
-    padding: 40px 30px;
-
     background-color: black;
 
     color: white;
-}
 
+    padding: 40px 30px;
+
+    display: flex;
+
+    gap: 50px;
+
+    justify-content: space-between;
+}
 
 footer h3 {
     margin: 0 0 15px;
 
     font-size: 20px;
 }
-
 
 footer a {
     display: block;
@@ -322,7 +329,6 @@ footer a {
 
     text-decoration: none;
 }
-
 
 footer a:hover {
     color: yellow;
@@ -343,7 +349,6 @@ footer a:hover {
         padding: 20px;
     }
 
-
     .menu {
         width: 100%;
 
@@ -354,11 +359,9 @@ footer a:hover {
         gap: 12px;
     }
 
-
     .menu a {
         font-size: 14px;
     }
-
 
     .hero {
         min-height: 400px;
@@ -366,26 +369,21 @@ footer a:hover {
         padding: 60px 20px;
     }
 
-
     .hero h2 {
         font-size: 30px;
     }
-
 
     .hero p {
         font-size: 17px;
     }
 
-
     .products {
         padding: 50px 20px;
     }
 
-
     .products h2 {
         font-size: 28px;
     }
-
 
     .product-container {
         flex-direction: column;
@@ -393,14 +391,12 @@ footer a:hover {
         align-items: center;
     }
 
-
     .product-card {
         max-width: 400px;
     }
 
-
     footer {
         flex-direction: column;
+      align-items: center;
     }
-
 }
