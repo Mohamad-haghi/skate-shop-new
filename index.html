@@ -7,231 +7,119 @@
 
     <title>SKATE SHOP</title>
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
+    <!-- Navigation -->
 
-        <nav class="navbar">
+    <nav>
+        <h1>SKATE SHOP</h1>
 
-            <h1 class="logo">
-                SKATE SHOP
-            </h1>
-
-            <div class="menu">
-                <a href="#home">خانه</a>
-                <a href="#products">محصولات</a>
-                <a href="#gallery">گالری</a>
-                <a href="#about">درباره ما</a>
-                <a href="#contact">تماس با ما</a>
-            </div>
-
-        </nav>
-
-    </header>
+        <div class="menu">
+            <a href="#">خانه</a>
+            <a href="#products">محصولات</a>
+            <a href="#">گالری</a>
+            <a href="#">درباره ما</a>
+            <a href="#">تماس با ما</a>
+        </div>
+    </nav>
 
 
-    <main>
+    <!-- Hero -->
 
-        <!-- Hero -->
-        <section class="hero" id="home">
+    <section class="hero">
 
-            <div class="hero-content">
+        <h2>دنیای اسکیت از اینجا شروع میشه</h2>
 
-                <h2>
-                    دنیای اسکیت از اینجا شروع میشه
-                </h2>
+        <p>همه چیز برای یک اسکیت سوار حرفه ای</p>
 
-                <p>
-                    همه چیز برای یک اسکیت سوار حرفه ای
-                </p>
+        <button>مشاهده محصولات</button>
 
-                <a href="#products" class="hero-button">
-                    مشاهده محصولات
-                </a>
-
-            </div>
-
-        </section>
+    </section>
 
 
-        <!-- Products -->
-        <section class="products" id="products">
+    <!-- Products -->
 
-            <div class="section-title">
+    <section class="products" id="products">
 
-                <h2>
-                    محصولات اسکیت
-                </h2>
+        <h2>محصولات اسکیت</h2>
 
-                <p>
-                    بهترین تجهیزات برای اسکیت‌سوارها
-                </p>
+        <p>بهترین تجهیزات برای اسکیت‌سوارها</p>
+
+        <div class="product-container">
+
+            <div class="product-card">
+
+                <h3>اسکیت حرفه‌ای</h3>
+
+                <p>مناسب برای اسکیت‌سوارهای حرفه‌ای</p>
+
+                <p>قیمت: ۲,۵۰۰,۰۰۰ تومان</p>
+
+                <button>مشاهده محصول</button>
 
             </div>
 
 
-            <div class="product-container">
+            <div class="product-card">
 
+                <h3>اسکیت خیابانی</h3>
 
-                <!-- Product 1 -->
-                <div class="product-card">
+                <p>مناسب برای اسکیت در فضای شهری</p>
 
-                    <img src="./Skate1.jpg" alt="اسکیت حرفه‌ای">
+                <p>قیمت: ۱,۸۰۰,۰۰۰ تومان</p>
 
-                    <div class="product-info">
-
-                        <h3>
-                            اسکیت حرفه‌ای
-                        </h3>
-
-                        <p>
-                            مناسب برای اسکیت‌سوارهای حرفه‌ای
-                        </p>
-
-                        <p class="price">
-                            قیمت: ۲,۵۰۰,۰۰۰ تومان
-                        </p>
-
-                        <button>
-                            مشاهده محصول
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Product 2 -->
-                <div class="product-card">
-
-                    <img src="./Skate2.jpg" alt="اسکیت خیابانی">
-
-                    <div class="product-info">
-
-                        <h3>
-                            اسکیت خیابانی
-                        </h3>
-
-                        <p>
-                            مناسب برای اسکیت در فضای شهری
-                        </p>
-
-                        <p class="price">
-                            قیمت: ۱,۸۰۰,۰۰۰ تومان
-                        </p>
-
-                        <button>
-                            مشاهده محصول
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Product 3 -->
-                <div class="product-card">
-
-                    <img src="./Skate3.jpg" alt="اسکیت مبتدی">
-
-                    <div class="product-info">
-
-                        <h3>
-                            اسکیت مبتدی
-                        </h3>
-
-                        <p>
-                            انتخاب مناسب برای شروع اسکیت
-                        </p>
-
-                        <p class="price">
-                            قیمت: ۱,۲۰۰,۰۰۰ تومان
-                        </p>
-
-                        <button>
-                            مشاهده محصول
-                        </button>
-
-                    </div>
-
-                </div>
-
+                <button>مشاهده محصول</button>
 
             </div>
 
-        </section>
 
+            <div class="product-card">
 
-        <!-- Gallery -->
-        <section class="gallery" id="gallery">
+                <h3>اسکیت مبتدی</h3>
 
-            <h2>
-                گالری
-            </h2>
+                <p>انتخاب مناسب برای شروع اسکیت</p>
 
-            <p>
-                تصاویر اسکیت‌های ما
-            </p>
+                <p>قیمت: ۱,۲۰۰,۰۰۰ تومان</p>
 
-        </section>
+                <button>مشاهده محصول</button>
 
+            </div>
 
-        <!-- About -->
-        <section class="about" id="about">
+        </div>
 
-            <h2>
-                درباره ما
-            </h2>
-
-            <p>
-                ما در SKATE SHOP تلاش می‌کنیم بهترین تجهیزات اسکیت را
-                برای علاقه‌مندان به این ورزش فراهم کنیم.
-            </p>
-
-        </section>
-
-
-        <!-- Contact -->
-        <section class="contact" id="contact">
-
-            <h2>
-                تماس با ما
-            </h2>
-
-            <p>
-                برای اطلاعات بیشتر با ما در ارتباط باشید.
-            </p>
-
-        </section>
-
-    </main>
+    </section>
 
 
     <!-- Footer -->
-     <footer>
 
-    <div>
-        <h3>SKATE SHOP</h3>
-    </div>
+    <footer>
 
-    <div>
-        <p>بهترین اطلاعات اسکیت را از ما بخواهید</p>
-    </div>
+        <div>
+            <h3>SKATE SHOP</h3>
+        </div>
 
-    <div>
-        <h3>ارتباط با ما</h3>
 
-        <a href="#">خانه</a>
-        <a href="#">تماس با ما</a>
-        <a href="#products">محصولات</a>
-    </div>
+        <div>
+            <p>بهترین اطلاعات اسکیت را از ما بخواهید</p>
+        </div>
 
-</footer>
 
+        <div>
+
+            <h3>ارتباط با ما</h3>
+
+            <a href="#">خانه</a>
+
+            <a href="#">تماس با ما</a>
+
+            <a href="#products">محصولات</a>
+
+        </div>
+
+    </footer>
 
 </body>
 
