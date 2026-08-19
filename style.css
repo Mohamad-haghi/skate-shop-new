@@ -130,6 +130,7 @@ nav h1 {
 /* =========================
    Hero Button
 ========================= */
+
 .hero-button {
     display: inline-block;
 
@@ -139,6 +140,8 @@ nav h1 {
 
     color: black;
 
+    border: none;
+
     border-radius: 10px;
 
     cursor: pointer;
@@ -147,7 +150,7 @@ nav h1 {
 
     transition: 0.3s;
 
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .hero-button:hover {
@@ -155,10 +158,8 @@ nav h1 {
 
     color: white;
 
-    text-decoration: none;
+    text-decoration: none !important;
 }
-
-
 
 
 /* =========================
@@ -296,7 +297,10 @@ nav h1 {
    Product Button
 ========================= */
 
-.product-card button {
+.product-card button,
+.product-button {
+    display: inline-block;
+
     margin-top: 15px;
 
     padding: 10px 20px;
@@ -313,10 +317,84 @@ nav h1 {
 
     font-size: 15px;
 
+    font-weight: normal;
+
+    text-decoration: none;
+
     transition: 0.3s;
 }
 
-.product-card button:hover {
+.product-card button:hover,
+.product-button:hover {
+    background-color: yellow;
+
+    color: black;
+}
+
+
+/* =========================
+   Product Detail Page
+========================= */
+
+.product-detail {
+    max-width: 700px;
+
+    margin: 60px auto;
+
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+.product-detail img {
+    width: 100%;
+
+    max-width: 450px;
+
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    display: block;
+
+    margin: 0 auto 25px;
+}
+
+.product-detail h1 {
+    margin-bottom: 25px;
+}
+
+.product-detail p {
+    line-height: 1.8;
+
+    font-size: 17px;
+}
+
+.product-detail a {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 12px 25px;
+
+    background-color: #111;
+
+    color: white;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.product-detail a:hover {
     background-color: yellow;
 
     color: black;
@@ -422,6 +500,16 @@ footer a:hover {
         max-width: 400px;
     }
 
+    .product-detail {
+        margin: 30px 20px;
+
+        padding: 20px;
+    }
+
+    .product-detail img {
+        height: 300px;
+    }
+
     footer {
         flex-direction: column;
 
@@ -429,22 +517,4 @@ footer a:hover {
 
         text-align: center;
     }
-   .product-detail {
-      max-width: 700px;
-      margin: 60px auto;
-      padding: 30px;
-      background-color: white;
-      border-rafius: 15px;
-      text-align: center;
-   }
-   .product-detail img {
-    width: 100%;
-    max-width: 450px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
-    margin: 0 auto 25px;
-}
-
 }
