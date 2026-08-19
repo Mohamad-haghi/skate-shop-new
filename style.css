@@ -130,7 +130,6 @@ nav h1 {
 /* =========================
    Hero Button
 ========================= */
-
 .hero-button {
     display: inline-block;
 
@@ -155,7 +154,11 @@ nav h1 {
     background-color: black;
 
     color: white;
+
+    text-decoration: none;
 }
+
+
 
 
 /* =========================
