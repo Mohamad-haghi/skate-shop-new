@@ -254,6 +254,13 @@ nav h1 {
     margin-bottom: 20px;
 }
 
+.product-card img {
+    transition: 0.3s;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
 
 /* =========================
    Product Title
