@@ -228,10 +228,11 @@ nav h1 {
     transition: 0.3s;
 }
 
-.product-card:hover {
-    transform: translateY(-8px);
 
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+.product-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
 }
 
 
