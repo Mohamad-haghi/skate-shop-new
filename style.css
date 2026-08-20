@@ -439,6 +439,40 @@ footer a:hover {
     color: yellow;
 }
 
+/* =========================
+   Contact
+========================= */
+
+.contact {
+    padding: 70px 30px;
+    text-align: center;
+    background-color: #eeeeee;
+}
+
+.contact h2 {
+    margin: 0 0 15px;
+    font-size: 32px;
+}
+
+.contact > p {
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 18px;
+}
+
+.contact div {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact div p {
+    margin: 0;
+    font-size: 17px;
+    font-weight: bold;
+}
+
 
 /* =========================
    Mobile
