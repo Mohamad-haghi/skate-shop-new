@@ -624,6 +624,14 @@ footer a:hover {
     .product-card {
         max-width: 400px;
     }
+.product-button {
+    display: inline-block;
+    width: 100%;
+    max-width: 220px;
+    padding: 12px 20px;
+    text-align: center;
+}
+   
    .gallery {
     padding: 50px 20px;
 }
