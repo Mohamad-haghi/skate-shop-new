@@ -638,6 +638,46 @@ footer a:hover {
     max-width: 400px;
     height: 250px;
 }
+   /* About - Mobile */
+
+.about {
+    padding: 50px 20px;
+}
+
+.about h2 {
+    font-size: 28px;
+}
+
+.about > p {
+    font-size: 16px;
+}
+
+
+/* Contact - Mobile */
+
+.contact {
+    padding: 50px 20px;
+}
+
+.contact h2 {
+    font-size: 28px;
+}
+
+.contact > p {
+    font-size: 16px;
+}
+
+.contact div {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact div a {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
 
     .product-detail {
         margin: 30px 20px;
