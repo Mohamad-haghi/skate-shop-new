@@ -473,6 +473,43 @@ footer a:hover {
     font-weight: bold;
 }
 
+/* =========================
+   Gallery
+========================= */
+
+.gallery {
+    padding: 70px 30px;
+    text-align: center;
+    background-color: white;
+}
+
+.gallery h2 {
+    margin: 0 0 15px;
+    font-size: 32px;
+}
+
+.gallery > p {
+    margin-bottom: 40px;
+    color: #666;
+    font-size: 18px;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.gallery-container img {
+    width: 100%;
+    max-width: 300px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
+
 
 /* =========================
    Mobile
