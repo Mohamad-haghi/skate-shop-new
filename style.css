@@ -526,44 +526,80 @@ footer a:hover {
 ========================= */
 
 .contact {
-    padding: 70px 30px;
+    padding: 80px 30px;
+
     text-align: center;
+
     background-color: #eeeeee;
 }
 
 .contact h2 {
     margin: 0 0 15px;
-    font-size: 32px;
+
+    font-size: 34px;
+
+    font-weight: bold;
 }
 
 .contact > p {
-    margin-bottom: 30px;
+    margin: 0 auto 40px;
+
     color: #666;
+
     font-size: 18px;
+
+    line-height: 1.8;
 }
+
+
+/* Contact Information */
 
 .contact div {
     display: flex;
+
     justify-content: center;
-    gap: 40px;
+
+    align-items: center;
+
+    gap: 20px;
+
     flex-wrap: wrap;
 }
 
+
+/* Phone & Email */
+
 .contact div a {
     display: inline-block;
-    padding: 12px 20px;
+
+    min-width: 220px;
+
+    padding: 13px 20px;
+
     background-color: #111;
+
     color: white;
+
     border-radius: 8px;
+
     font-size: 17px;
+
     font-weight: bold;
+
     text-decoration: none;
+
     transition: 0.3s;
 }
 
+
+/* Hover */
+
 .contact div a:hover {
     background-color: yellow;
+
     color: black;
+
+    transform: translateY(-3px);
 }
 
 
