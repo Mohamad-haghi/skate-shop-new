@@ -572,27 +572,80 @@ footer a:hover {
 ========================= */
 
 .gallery {
-    padding: 70px 30px;
+    padding: 90px 30px;
+
     text-align: center;
+
     background-color: white;
 }
 
 .gallery h2 {
-    margin: 0 0 15px;
-    font-size: 32px;
+    margin: 0 0 12px;
+
+    font-size: 34px;
+
+    font-weight: bold;
 }
 
 .gallery > p {
-    margin-bottom: 40px;
+    margin: 0 auto 50px;
+
     color: #666;
+
     font-size: 18px;
+
+    line-height: 1.8;
 }
+
+
+/* Gallery Container */
 
 .gallery-container {
     display: flex;
+
     justify-content: center;
+
+    align-items: stretch;
+
     gap: 25px;
+
     flex-wrap: wrap;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+
+/* Gallery Images */
+
+.gallery-container img {
+    width: 100%;
+
+    max-width: 300px;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    display: block;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    cursor: pointer;
+}
+
+
+/* Image Hover */
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-container img {
