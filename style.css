@@ -104,67 +104,118 @@ nav h1 {
 ========================= */
 
 .hero {
-    min-height: 450px;
+    min-height: 500px;
+
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
+
     padding: 80px 30px;
+
     text-align: center;
+
     color: white;
-    background-color: #222;
+
     background-image: url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/IMG_0952.jpeg");
+
     background-size: cover;
     background-position: center;
+
     position: relative;
+
+    overflow: hidden;
 }
+
+
+/* لایه تاریک روی عکس */
 
 .hero::before {
     content: "";
+
     position: absolute;
+
     inset: 0;
+
     background: rgba(0, 0, 0, 0.55);
 }
+
+
+/* محتوای Hero */
 
 .hero h2,
 .hero p,
 .hero-button {
     position: relative;
+
     z-index: 1;
 }
 
+
+/* عنوان اصلی */
+
 .hero h2 {
-    margin: 0 0 15px;
-    font-size: 40px;
+    margin: 0 0 18px;
+
+    font-size: 44px;
+
+    font-weight: bold;
+
+    line-height: 1.4;
 }
+
+
+/* توضیحات */
 
 .hero p {
     margin: 0 0 30px;
+
     font-size: 20px;
+
+    line-height: 1.8;
 }
 
 
-/* =========================
-   Hero Button
-========================= */
+/* دکمه */
 
 .hero-button {
     display: inline-block;
-    padding: 12px 25px;
+
+    padding: 14px 30px;
+
     background-color: yellow;
+
     color: black;
+
     border: none;
+
     border-radius: 10px;
+
     cursor: pointer;
+
+    font-size: 16px;
+
     font-weight: bold;
-    transition: 0.3s;
+
     text-decoration: none !important;
+
+    transition: 0.3s;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
 }
+
+
+/* Hover دکمه */
 
 .hero-button:hover {
     background-color: black;
+
     color: white;
-    text-decoration: none !important;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 
