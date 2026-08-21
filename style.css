@@ -939,4 +939,5 @@ footer a {
 
 footer a:hover {
     color: yellow;
+   text-decoration: anderline;
 }
