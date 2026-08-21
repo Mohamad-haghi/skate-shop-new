@@ -738,6 +738,13 @@ footer a:hover {
         height: 300px;
     }
 
+   .product-detail .order-button {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    text-align: center;
+}
+
     footer {
         flex-direction: column;
 
