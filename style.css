@@ -224,19 +224,29 @@ nav h1 {
 ========================= */
 
 .products {
-    padding: 70px 30px;
+    padding: 90px 30px;
+
     text-align: center;
+
+    background-color: #f5f5f5;
 }
 
 .products h2 {
-    margin-bottom: 10px;
-    font-size: 32px;
+    margin: 0 0 12px;
+
+    font-size: 34px;
+
+    font-weight: bold;
 }
 
 .products > p {
-    margin-bottom: 40px;
+    margin: 0 auto 50px;
+
     color: #666;
+
     font-size: 18px;
+
+    line-height: 1.8;
 }
 
 
@@ -246,10 +256,18 @@ nav h1 {
 
 .product-container {
     display: flex;
+
     justify-content: center;
+
     align-items: stretch;
-    gap: 25px;
+
+    gap: 30px;
+
     flex-wrap: wrap;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
 }
 
 
