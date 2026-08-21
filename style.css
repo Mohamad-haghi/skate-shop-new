@@ -416,6 +416,19 @@ nav h1 {
     color: black;
 }
 
+/* Order Button */
+
+.product-detail .order-button {
+    background-color: yellow;
+    color: black;
+    margin-right: 10px;
+}
+
+.product-detail .order-button:hover {
+    background-color: black;
+    color: white;
+}
+
 
 /* =========================
    Footer
