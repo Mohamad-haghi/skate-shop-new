@@ -26,32 +26,76 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 30px;
+
+    padding: 22px 35px;
+
     background-color: #111;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+    position: relative;
+    z-index: 10;
 }
 
 nav h1 {
     margin: 0;
+
     color: white;
-    font-size: 22px;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
 }
 
 .menu {
     display: flex;
+
     align-items: center;
-    gap: 20px;
+
+    gap: 25px;
 }
 
 .menu a {
+    position: relative;
+
     color: white;
+
     text-decoration: none;
+
     white-space: nowrap;
+
+    padding: 5px 0;
+
     transition: 0.3s;
 }
 
 .menu a:hover {
     color: yellow;
-    text-decoration: underline;
+}
+
+
+/* خط زیر لینک هنگام Hover */
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background-color: yellow;
+
+    transition: 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
 }
 
 
