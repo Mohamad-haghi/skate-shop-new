@@ -356,23 +356,39 @@ nav h1 {
 .product-card button,
 .product-button {
     display: inline-block;
+
     margin-top: 15px;
-    padding: 10px 20px;
+
+    padding: 11px 22px;
+
     border: none;
+
     border-radius: 8px;
+
     background-color: #111;
+
     color: white;
+
     cursor: pointer;
+
     font-size: 15px;
-    font-weight: normal;
+
     text-decoration: none;
-    transition: 0.3s;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
+
 
 .product-card button:hover,
 .product-button:hover {
     background-color: yellow;
+
     color: black;
+
+    transform: translateY(-2px);
 }
 
 
