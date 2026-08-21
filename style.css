@@ -738,7 +738,7 @@ footer a:hover {
         height: 300px;
     }
 
-   .product-detail .order-button {
+.product-detail a {
     width: 100%;
     max-width: 300px;
     margin: 10px auto;
