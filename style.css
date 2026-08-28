@@ -754,3 +754,580 @@ footer a:hover {
         margin-bottom: 8px;
     }
 }
+
+
+/* =====================================================
+   SKATE SHOP
+   STEP 1 — FIGMA HEADER + HERO
+   ===================================================== */
+
+
+/* =========================
+   NEW HEADER
+========================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    background: #050505;
+    border-bottom: 1px solid #252525;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Logo */
+
+.site-header .logo {
+    display: inline-block;
+
+    padding: 7px 11px;
+
+    background: #ffff00;
+    color: #050505;
+
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transform: skew(-5deg);
+}
+
+
+/* Navigation */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+}
+
+
+.main-nav a {
+    position: relative;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+
+.main-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #ffff00;
+
+    transition: width 0.25s ease;
+}
+
+
+.main-nav a:hover {
+    color: #ffff00;
+}
+
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* Cart */
+
+.header-cart {
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    text-decoration: none;
+}
+
+
+.header-cart span {
+    position: absolute;
+
+    top: -2px;
+    right: -4px;
+
+    min-width: 17px;
+    height: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 3px;
+
+    background: #ffff00;
+    color: #000000;
+
+    border-radius: 50%;
+
+    font-size: 10px;
+    font-weight: 900;
+}
+
+
+/* =========================
+   NEW HERO
+========================= */
+
+.hero {
+    position: relative;
+
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 80px 7%;
+
+    text-align: right;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    background-image:
+        url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/IMG_0952.jpeg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Overlay */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.25) 0%,
+            rgba(0, 0, 0, 0.60) 45%,
+            rgba(0, 0, 0, 0.90) 100%
+        );
+}
+
+
+/* Hero content */
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+}
+
+
+/* Small title */
+
+.hero-small-title {
+    margin: 0 0 15px;
+
+    color: #ffff00;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* Main title */
+
+.hero-content h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: Impact, "Arial Black", Arial, sans-serif;
+
+    font-size: clamp(65px, 10vw, 135px);
+
+    font-weight: 900;
+
+    line-height: 0.88;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* Description */
+
+.hero-content .hero-description {
+    max-width: 480px;
+
+    margin: 28px 0;
+
+    color: #eeeeee;
+
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+
+/* Buttons container */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+
+/* Hero buttons */
+
+.hero-actions .hero-button {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 155px;
+
+    padding: 14px 25px;
+
+    border-radius: 0;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    box-shadow: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Primary button */
+
+.hero-actions .hero-button.primary {
+    background: #ffff00;
+    color: #000000;
+}
+
+
+/* Secondary button */
+
+.hero-actions .hero-button.secondary {
+    background: transparent;
+    color: #ffffff;
+
+    border: 1px solid #ffffff;
+}
+
+
+/* Hover */
+
+.hero-actions .hero-button:hover {
+    transform: translateY(-3px);
+}
+
+
+.hero-actions .hero-button.primary:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+
+.hero-actions .hero-button.secondary:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .site-header {
+        padding: 0 25px;
+    }
+
+    .main-nav {
+        gap: 15px;
+    }
+
+    .main-nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 600px;
+
+        padding: 70px 5%;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .site-header {
+        min-height: 64px;
+
+        padding: 0 15px;
+
+        gap: 10px;
+    }
+
+
+    .site-header .logo {
+        padding: 6px 8px;
+
+        font-size: 15px;
+    }
+
+
+    /*
+       Mobile navigation:
+       keep it compact and horizontally scrollable
+    */
+
+    .main-nav {
+        flex: 1;
+
+        justify-content: flex-start;
+
+        gap: 14px;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+
+    .main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .main-nav a {
+        flex: 0 0 auto;
+
+        font-size: 11px;
+
+        white-space: nowrap;
+    }
+
+
+    .main-nav a::after {
+        display: none;
+    }
+
+
+    .header-cart {
+        flex: 0 0 auto;
+
+        width: 32px;
+        height: 32px;
+
+        font-size: 17px;
+    }
+
+
+    .header-cart span {
+        top: -4px;
+        right: -5px;
+
+        min-width: 16px;
+        height: 16px;
+
+        font-size: 9px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 600px;
+
+        align-items: flex-end;
+
+        padding: 40px 20px 55px;
+
+        background-position: center;
+    }
+
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.25) 0%,
+                rgba(0, 0, 0, 0.65) 50%,
+                rgba(0, 0, 0, 0.95) 100%
+            );
+    }
+
+
+    .hero-content {
+        padding: 0;
+
+        text-align: right;
+    }
+
+
+    .hero-small-title {
+        margin-bottom: 10px;
+
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .hero-content h1 {
+        font-size: clamp(58px, 18vw, 90px);
+
+        line-height: 0.88;
+
+        letter-spacing: 1px;
+    }
+
+
+    .hero-content .hero-description {
+        max-width: 330px;
+
+        margin: 22px 0;
+
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+
+    .hero-actions {
+        width: 100%;
+
+        gap: 10px;
+    }
+
+
+    .hero-actions .hero-button {
+        flex: 1;
+
+        min-width: 0;
+
+        padding: 13px 14px;
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+    .site-header .logo {
+        font-size: 13px;
+    }
+
+
+    .main-nav {
+        gap: 10px;
+    }
+
+
+    .main-nav a {
+        font-size: 10px;
+    }
+
+
+    .hero {
+        min-height: 570px;
+
+        padding-bottom: 45px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 55px;
+    }
+
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+
+    .hero-actions .hero-button {
+        width: 100%;
+
+        flex: none;
+    }
+
+}
