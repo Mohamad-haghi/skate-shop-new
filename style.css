@@ -1,9 +1,11 @@
 /* =========================
-   General
+   RESET
 ========================= */
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -11,85 +13,74 @@ html {
 }
 
 body {
-    margin: 0;
-    background-color: #f5f5f5;
+    background: #f5f5f5;
     color: #222;
     font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
 }
 
 
 /* =========================
-   Navigation
+   NAVIGATION
 ========================= */
 
 nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 22px 35px;
+    padding: 18px 6%;
 
-    background-color: #111;
+    background: rgba(17, 17, 17, 0.96);
 
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-
-    position: relative;
-    z-index: 10;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 nav h1 {
-    margin: 0;
-
-    color: white;
-
-    font-size: 24px;
-
-    font-weight: bold;
-
+    color: #fff;
+    font-size: 25px;
+    font-weight: 800;
     letter-spacing: 1px;
 }
 
 .menu {
     display: flex;
-
     align-items: center;
-
-    gap: 25px;
+    gap: 28px;
 }
 
 .menu a {
     position: relative;
 
-    color: white;
-
-    text-decoration: none;
-
-    white-space: nowrap;
-
-    padding: 5px 0;
+    color: #fff;
+    font-size: 15px;
 
     transition: 0.3s;
 }
 
 .menu a:hover {
-    color: yellow;
+    color: #ffff00;
 }
-
-
-/* خط زیر لینک هنگام Hover */
 
 .menu a::after {
     content: "";
 
     position: absolute;
-
     right: 0;
-    bottom: 0;
+    bottom: -6px;
 
     width: 0;
     height: 2px;
 
-    background-color: yellow;
+    background: #ffff00;
 
     transition: 0.3s;
 }
@@ -100,459 +91,319 @@ nav h1 {
 
 
 /* =========================
-   Hero
+   HERO
 ========================= */
 
 .hero {
-    min-height: 500px;
+    position: relative;
+
+    min-height: 600px;
 
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
 
-    padding: 80px 30px;
+    padding: 80px 25px;
 
     text-align: center;
+    color: #fff;
 
-    color: white;
-
-    background-image: url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/IMG_0952.jpeg");
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.58),
+            rgba(0, 0, 0, 0.7)
+        ),
+        url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/IMG_0952.jpeg");
 
     background-size: cover;
     background-position: center;
-
-    position: relative;
-
-    overflow: hidden;
 }
-
-
-/* لایه تاریک روی عکس */
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background: rgba(0, 0, 0, 0.55);
-}
-
-
-/* محتوای Hero */
-
-.hero h2,
-.hero p,
-.hero-button {
-    position: relative;
-
-    z-index: 1;
-}
-
-
-/* عنوان اصلی */
 
 .hero h2 {
-    margin: 0 0 18px;
+    position: relative;
 
-    font-size: 44px;
-
-    font-weight: bold;
-
-    line-height: 1.4;
-}
-
-
-/* توضیحات */
-
-.hero p {
-    margin: 0 0 30px;
-
-    font-size: 20px;
-
-    line-height: 1.8;
-}
-
-
-/* دکمه */
-
-.hero-button {
-    display: inline-block;
-
-    padding: 14px 30px;
-
-    background-color: yellow;
-
-    color: black;
-
-    border: none;
-
-    border-radius: 10px;
-
-    cursor: pointer;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    text-decoration: none !important;
-
-    transition: 0.3s;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-}
-
-
-/* Hover دکمه */
-
-.hero-button:hover {
-    background-color: black;
-
-    color: white;
-
-    transform: translateY(-3px);
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-}
-
-
-/* =========================
-   Products
-========================= */
-
-.products {
-    padding: 90px 30px;
-
-    text-align: center;
-
-    background-color: #f5f5f5;
-}
-
-.products h2 {
-    margin: 0 0 12px;
-
-    font-size: 34px;
-
-    font-weight: bold;
-}
-
-.products > p {
-    margin: 0 auto 50px;
-
-    color: #666;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================
-   Product Container
-========================= */
-
-.product-container {
-    display: flex;
-
-    justify-content: center;
-
-    align-items: stretch;
-
-    gap: 30px;
-
-    flex-wrap: wrap;
-
-    max-width: 1000px;
-
-    margin: 0 auto;
-}
-
-
-/* =========================
-   Product Card
-========================= */
-
-.product-card {
-    width: 100%;
-    max-width: 300px;
-
-    padding: 20px;
-
-    background-color: white;
-
-    border: 1px solid #ddd;
-
-    border-radius: 15px;
-
-    text-align: center;
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-/* Hover کارت */
-
-.product-card:hover {
-    transform: translateY(-10px);
-
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
-}
-
-
-/* =========================
-   Product Images
-========================= */
-
-.product-card img {
-    width: 100%;
-
-    height: 220px;
-
-    object-fit: cover;
-
-    border-radius: 10px;
-
-    display: block;
+    max-width: 800px;
 
     margin-bottom: 20px;
 
-    transition: transform 0.3s ease;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.hero p {
+    position: relative;
+
+    margin-bottom: 35px;
+
+    color: #eee;
+
+    font-size: 20px;
+}
+
+.hero-button {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 14px 32px;
+
+    background: #ffff00;
+    color: #111;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: #111;
+    color: #fff;
+
+    transform: translateY(-4px);
 }
 
 
-/* بزرگ شدن نرم عکس */
+/* =========================
+   SECTION TITLES
+========================= */
+
+.products h2,
+.gallery h2,
+.about h2,
+.contact h2 {
+    margin-bottom: 12px;
+
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.products > p,
+.gallery > p,
+.contact > p {
+    color: #666;
+    font-size: 18px;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products {
+    padding: 100px 6%;
+
+    text-align: center;
+
+    background: #f5f5f5;
+}
+
+.products > p {
+    margin-bottom: 55px;
+}
+
+.product-container {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.product-card {
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 240px;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: 0.4s;
+}
 
 .product-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
-
-
-/* =========================
-   Product Title
-========================= */
 
 .product-card h3 {
-    margin: 0 0 10px;
-    font-size: 24px;
+    margin: 22px 20px 10px;
+
+    font-size: 23px;
 }
-
-
-/* =========================
-   Product Text
-========================= */
 
 .product-card p {
-    margin: 8px 0;
-    line-height: 1.7;
-    color: #555;
+    margin: 8px 20px;
+
+    color: #666;
 }
 
-
-/* =========================
-   Product Price
-========================= */
-
 .product-card p:last-of-type {
-    margin-top: 15px;
+    margin-top: 18px;
+
     color: #111;
+
     font-size: 18px;
     font-weight: bold;
 }
 
-
-/* =========================
-   Product Button
-========================= */
-
-.product-card button,
 .product-button {
     display: inline-block;
 
-    margin-top: 15px;
+    margin: 18px 0 25px;
 
-    padding: 11px 22px;
+    padding: 11px 25px;
 
-    border: none;
+    background: #111;
+    color: #fff;
 
     border-radius: 8px;
 
-    background-color: #111;
-
-    color: white;
-
-    cursor: pointer;
-
     font-size: 15px;
+    font-weight: bold;
 
-    text-decoration: none;
-
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease;
+    transition: 0.3s;
 }
 
-
-.product-card button:hover,
 .product-button:hover {
-    background-color: yellow;
-
-    color: black;
+    background: #ffff00;
+    color: #111;
 
     transform: translateY(-2px);
 }
 
 
 /* =========================
-   Product Detail Page
+   GALLERY
 ========================= */
 
-.product-detail {
-    max-width: 700px;
-    margin: 60px auto;
-    padding: 30px;
-    background-color: white;
-    border-radius: 15px;
+.gallery {
+    padding: 100px 6%;
+
     text-align: center;
+
+    background: #fff;
 }
 
-.product-detail img {
+.gallery > p {
+    margin-bottom: 55px;
+}
+
+.gallery-container {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.gallery-container img {
     width: 100%;
-    max-width: 450px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 12px;
+    height: 260px;
+
     display: block;
-    margin: 0 auto 25px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
 }
 
-.product-detail h1 {
-    margin: 0 0 25px;
-    font-size: 32px;
+.gallery-container img:hover {
+    transform: scale(1.03);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
-.product-detail p {
-    line-height: 1.8;
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    padding: 100px 6%;
+
+    text-align: center;
+
+    background: #f5f5f5;
+}
+
+.about > p {
+    max-width: 750px;
+
+    margin: 0 auto 20px;
+
+    color: #555;
+
+    font-size: 18px;
+}
+
+.about div {
+    max-width: 750px;
+
+    margin: 0 auto;
+}
+
+.about div p {
+    color: #666;
+
     font-size: 17px;
 }
 
-.product-detail p:last-of-type {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #111;
-}
-
 
 /* =========================
-   Product Detail Buttons
-========================= */
-
-.product-detail a {
-    display: inline-block;
-    width: 300px;
-    max-width: 100%;
-    margin: 10px 5px;
-    padding: 12px 20px;
-    background-color: #111;
-    color: white;
-    border-radius: 8px;
-    text-align: center;
-    text-decoration: none;
-    line-height: 22px;
-    transition: 0.3s;
-}
-
-.product-detail a:hover {
-    background-color: yellow;
-    color: black;
-}
-
-
-/* =========================
-   Order Button
-========================= */
-
-.product-detail a.order-button {
-    background-color: yellow;
-    color: black;
-}
-
-.product-detail a.order-button:hover {
-    background-color: black;
-    color: white;
-}
-
-
-/* =========================
-   Footer
-========================= */
-
-footer {
-    background-color: black;
-    color: white;
-    padding: 40px 30px;
-    display: flex;
-    gap: 50px;
-    justify-content: space-between;
-}
-
-footer h3 {
-    margin: 0 0 15px;
-    font-size: 20px;
-}
-
-footer a {
-    display: block;
-    margin-bottom: 10px;
-    color: white;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: yellow;
-}
-
-
-/* =========================
-   Contact
+   CONTACT
 ========================= */
 
 .contact {
-    padding: 80px 30px;
+    padding: 100px 6%;
 
     text-align: center;
 
-    background-color: #eeeeee;
-}
-
-.contact h2 {
-    margin: 0 0 15px;
-
-    font-size: 34px;
-
-    font-weight: bold;
+    background: #eee;
 }
 
 .contact > p {
-    margin: 0 auto 40px;
-
-    color: #666;
-
-    font-size: 18px;
-
-    line-height: 1.8;
+    margin-bottom: 40px;
 }
-
-
-/* Contact Information */
 
 .contact div {
     display: flex;
@@ -566,363 +417,58 @@ footer a:hover {
     flex-wrap: wrap;
 }
 
-
-/* Phone & Email */
-
 .contact div a {
-    display: inline-block;
+    min-width: 240px;
 
-    min-width: 220px;
+    padding: 14px 22px;
 
-    padding: 13px 20px;
+    background: #111;
+    color: #fff;
 
-    background-color: #111;
+    border-radius: 10px;
 
-    color: white;
-
-    border-radius: 8px;
-
-    font-size: 17px;
-
+    font-size: 16px;
     font-weight: bold;
-
-    text-decoration: none;
 
     transition: 0.3s;
 }
 
-
-/* Hover */
-
 .contact div a:hover {
-    background-color: yellow;
-
-    color: black;
+    background: #ffff00;
+    color: #111;
 
     transform: translateY(-3px);
 }
 
 
 /* =========================
-   Gallery
-========================= */
-
-.gallery {
-    padding: 90px 30px;
-
-    text-align: center;
-
-    background-color: white;
-}
-
-.gallery h2 {
-    margin: 0 0 12px;
-
-    font-size: 34px;
-
-    font-weight: bold;
-}
-
-.gallery > p {
-    margin: 0 auto 50px;
-
-    color: #666;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-}
-
-
-/* Gallery Container */
-
-.gallery-container {
-    display: flex;
-
-    justify-content: center;
-
-    align-items: stretch;
-
-    gap: 25px;
-
-    flex-wrap: wrap;
-
-    max-width: 1000px;
-
-    margin: 0 auto;
-}
-
-
-/* Gallery Images */
-
-.gallery-container img {
-    width: 100%;
-
-    max-width: 300px;
-
-    height: 220px;
-
-    object-fit: cover;
-
-    border-radius: 15px;
-
-    display: block;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-
-    cursor: pointer;
-}
-
-
-/* Image Hover */
-
-.gallery-container img:hover {
-    transform: scale(1.05);
-
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-.gallery-container img {
-    width: 100%;
-    max-width: 300px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 15px;
-    display: block;
-}
-
-
-/* =========================
-   About
-========================= */
-
-.about {
-    padding: 80px 30px;
-    text-align: center;
-    background-color: #f5f5f5;
-}
-
-.about h2 {
-    margin: 0 0 20px;
-    font-size: 34px;
-}
-
-.about > p {
-    max-width: 700px;
-    margin: 0 auto 25px;
-
-    color: #555;
-
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-.about div {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.about div p {
-    margin: 0;
-
-    color: #666;
-
-    font-size: 17px;
-    line-height: 1.8;
-}
-
-
-/* =========================
-   Mobile
-========================= */
-
-@media (max-width: 768px) {
-
-    nav {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-    }
-
-    .menu {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .menu a {
-        font-size: 14px;
-    }
-
-
-    /* Hero */
-
-    .hero {
-        min-height: 400px;
-        padding: 60px 20px;
-    }
-
-    .hero h2 {
-        font-size: 30px;
-    }
-
-    .hero p {
-        font-size: 17px;
-    }
-
-
-    /* Products */
-
-    .products {
-        padding: 50px 20px;
-    }
-
-    .products h2 {
-        font-size: 28px;
-    }
-
-    .product-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .product-card {
-        max-width: 400px;
-    }
-
-    .product-button {
-        width: 100%;
-        max-width: 220px;
-        padding: 12px 20px;
-        text-align: center;
-    }
-
-
-    /* Gallery */
-
-    .gallery {
-        padding: 50px 20px;
-    }
-
-    .gallery h2 {
-        font-size: 28px;
-    }
-
-    .gallery > p {
-        font-size: 16px;
-    }
-
-    .gallery-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .gallery-container img {
-        max-width: 400px;
-        height: 250px;
-    }
-
-
-    /* About */
-
-    .about {
-        padding: 50px 20px;
-    }
-
-    .about h2 {
-        font-size: 28px;
-    }
-
-    .about > p {
-        font-size: 16px;
-    }
-
-
-    /* Contact */
-
-    .contact {
-        padding: 50px 20px;
-    }
-
-    .contact h2 {
-        font-size: 28px;
-    }
-
-    .contact > p {
-        font-size: 16px;
-    }
-
-    .contact div {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .contact div a {
-        width: 100%;
-        max-width: 350px;
-        text-align: center;
-    }
-
-
-    /* Product Detail */
-
-    .product-detail {
-        margin: 30px 20px;
-        padding: 20px;
-    }
-
-    .product-detail img {
-        height: 300px;
-    }
-
-    .product-detail a {
-        display: block;
-        width: 100%;
-        max-width: 300px;
-        margin: 10px auto;
-        text-align: center;
-    }
-
-
-/* =========================
-   Footer
+   FOOTER
 ========================= */
 
 footer {
-    background-color: #111;
+    display: grid;
 
-    color: white;
+    grid-template-columns: repeat(3, 1fr);
 
-    padding: 50px 30px;
+    gap: 50px;
 
-    display: flex;
+    padding: 55px 6%;
 
-    justify-content: space-between;
+    background: #111;
 
-    align-items: flex-start;
-
-    gap: 40px;
-
-    flex-wrap: wrap;
+    color: #fff;
 }
 
 footer h3 {
-    margin: 0 0 15px;
+    margin-bottom: 15px;
 
     font-size: 20px;
 }
 
 footer p {
-    margin: 0;
+    color: #bbb;
 
-    color: #ccc;
-
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
 footer a {
@@ -930,14 +476,281 @@ footer a {
 
     margin-bottom: 10px;
 
-    color: #ccc;
-
-    text-decoration: none;
+    color: #bbb;
 
     transition: 0.3s;
 }
 
 footer a:hover {
-    color: yellow;
-   text-decoration: anderline;
+    color: #ffff00;
+
+    text-decoration: underline;
+}
+
+
+/* =========================
+   PRODUCT DETAIL
+========================= */
+
+.product-detail {
+    max-width: 800px;
+
+    margin: 70px auto;
+
+    padding: 35px;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.product-detail img {
+    width: 100%;
+    max-width: 500px;
+    height: 380px;
+
+    margin: 0 auto 30px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+}
+
+.product-detail h1 {
+    margin-bottom: 20px;
+
+    font-size: 34px;
+}
+
+.product-detail p {
+    margin-bottom: 10px;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+.product-detail p:last-of-type {
+    margin-top: 20px;
+
+    color: #111;
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.product-detail a {
+    display: inline-block;
+
+    width: 280px;
+
+    margin: 10px 5px;
+
+    padding: 13px 20px;
+
+    background: #111;
+    color: #fff;
+
+    border-radius: 9px;
+
+    transition: 0.3s;
+}
+
+.product-detail a:hover {
+    background: #ffff00;
+    color: #111;
+}
+
+.product-detail a.order-button {
+    background: #ffff00;
+    color: #111;
+}
+
+.product-detail a.order-button:hover {
+    background: #111;
+    color: #fff;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .product-container,
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    /* Navigation */
+
+    nav {
+        flex-direction: column;
+
+        gap: 18px;
+
+        padding: 18px 15px;
+    }
+
+    nav h1 {
+        font-size: 22px;
+    }
+
+    .menu {
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 500px;
+
+        padding: 60px 20px;
+    }
+
+    .hero h2 {
+        font-size: 31px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-button {
+        padding: 13px 25px;
+    }
+
+
+    /* Products */
+
+    .products {
+        padding: 70px 20px;
+    }
+
+    .products h2,
+    .gallery h2,
+    .about h2,
+    .contact h2 {
+        font-size: 28px;
+    }
+
+    .products > p,
+    .gallery > p,
+    .contact > p {
+        font-size: 16px;
+    }
+
+    .product-container,
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        max-width: 420px;
+
+        margin: 0 auto;
+    }
+
+
+    /* Gallery */
+
+    .gallery {
+        padding: 70px 20px;
+    }
+
+    .gallery-container img {
+        height: 260px;
+    }
+
+
+    /* About */
+
+    .about {
+        padding: 70px 20px;
+    }
+
+
+    /* Contact */
+
+    .contact {
+        padding: 70px 20px;
+    }
+
+    .contact div {
+        flex-direction: column;
+    }
+
+    .contact div a {
+        width: 100%;
+
+        max-width: 350px;
+    }
+
+
+    /* Product Detail */
+
+    .product-detail {
+        margin: 30px 15px;
+
+        padding: 22px;
+    }
+
+    .product-detail img {
+        height: 300px;
+    }
+
+    .product-detail h1 {
+        font-size: 27px;
+    }
+
+    .product-detail a {
+        display: block;
+
+        width: 100%;
+
+        max-width: 300px;
+
+        margin: 10px auto;
+    }
+
+
+    /* Footer */
+
+    footer {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 45px 25px;
+
+        text-align: center;
+    }
+
+    footer a {
+        margin-bottom: 8px;
+    }
 }
