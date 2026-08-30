@@ -89,7 +89,6 @@ nav h1 {
     width: 100%;
 }
 
-
 /* =========================
    HERO
 ========================= */
@@ -97,73 +96,311 @@ nav h1 {
 .hero {
     position: relative;
 
-    min-height: 600px;
+    min-height: 650px;
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-start;
 
-    padding: 80px 25px;
+    padding: 80px 7%;
 
-    text-align: center;
+    text-align: right;
+
+    overflow: hidden;
+
     color: #fff;
-   
-background-image:
-    url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/5BADEB96-5972-4426-BA2E-320ED4024C9E.png");
-    
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/5BADEB96-5972-4426-BA2E-320ED4024C9E.png");
 
     background-size: cover;
     background-position: center;
 }
 
-.hero h2 {
-    position: relative;
 
-    max-width: 800px;
+/* Dark overlay */
 
-    margin-bottom: 20px;
+.hero-overlay {
+    position: absolute;
 
-    font-size: 48px;
-    font-weight: 800;
-    line-height: 1.4;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.20) 0%,
+            rgba(0, 0, 0, 0.45) 45%,
+            rgba(0, 0, 0, 0.75) 100%
+        );
 }
 
-.hero p {
+
+/* Hero content */
+
+.hero-content {
     position: relative;
 
-    margin-bottom: 35px;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+}
+
+
+/* Small title */
+
+.hero-small-title {
+    margin: 0 0 15px;
+
+    color: #ffff00;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+
+/* Main title */
+
+.hero-content h1 {
+    margin: 0;
+
+    color: #fff;
+
+    font-family: Impact, "Arial Black", Arial, sans-serif;
+
+    font-size: clamp(65px, 10vw, 135px);
+
+    font-weight: 900;
+
+    line-height: 0.88;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* Description */
+
+.hero-content .hero-description {
+    max-width: 480px;
+
+    margin: 28px 0;
 
     color: #eee;
 
-    font-size: 20px;
+    font-size: 18px;
+
+    line-height: 1.9;
 }
 
-.hero-button {
+
+/* Buttons */
+
+.hero-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+
+.hero-actions .hero-button {
     position: relative;
 
-    display: inline-block;
+    display: inline-flex;
 
-    padding: 14px 32px;
+    align-items: center;
+    justify-content: center;
 
-    background: #ffff00;
-    color: #111;
+    min-width: 155px;
 
-    border-radius: 10px;
+    padding: 14px 25px;
 
-    font-size: 16px;
-    font-weight: bold;
+    border-radius: 0;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    font-size: 15px;
 
-    transition: 0.3s;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    box-shadow: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.hero-button:hover {
-    background: #111;
+
+/* Main button */
+
+.hero-actions .hero-button.primary {
+    background: #ffff00;
+
+    color: #000;
+}
+
+
+/* Second button */
+
+.hero-actions .hero-button.secondary {
+    background: transparent;
+
     color: #fff;
 
-    transform: translateY(-4px);
+    border: 1px solid #fff;
+}
+
+
+/* Hover */
+
+.hero-actions .hero-button:hover {
+    transform: translateY(-3px);
+}
+
+
+.hero-actions .hero-button.primary:hover {
+    background: #fff;
+
+    color: #000;
+}
+
+
+.hero-actions .hero-button.secondary:hover {
+    background: #fff;
+
+    color: #000;
+}
+
+
+/* =========================
+   HERO MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 600px;
+
+        align-items: flex-end;
+
+        padding: 40px 20px 55px;
+
+        background-position: center;
+    }
+
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.20) 0%,
+                rgba(0, 0, 0, 0.55) 50%,
+                rgba(0, 0, 0, 0.90) 100%
+            );
+    }
+
+
+    .hero-content {
+        padding: 0;
+
+        text-align: right;
+    }
+
+
+    .hero-small-title {
+        margin-bottom: 10px;
+
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .hero-content h1 {
+        font-size: clamp(58px, 18vw, 90px);
+
+        line-height: 0.88;
+    }
+
+
+    .hero-content .hero-description {
+        max-width: 330px;
+
+        margin: 22px 0;
+
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+
+    .hero-actions {
+        width: 100%;
+
+        gap: 10px;
+    }
+
+
+    .hero-actions .hero-button {
+        flex: 1;
+
+        min-width: 0;
+
+        padding: 13px 14px;
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+    .hero {
+        min-height: 570px;
+
+        padding-bottom: 45px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 55px;
+    }
+
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+
+    .hero-actions .hero-button {
+        width: 100%;
+
+        flex: none;
+    }
+
 }
 
 
