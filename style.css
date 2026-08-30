@@ -108,16 +108,13 @@ nav h1 {
 
     text-align: center;
     color: #fff;
-
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.58),
-            rgba(0, 0, 0, 0.7)
-        ),
-        url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/IMG_0952.jpeg");
+   
+background-image:
+    url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/5BADEB96-5972-4426-BA2E-320ED4024C9E.png");
+    
 
     background-size: cover;
-    background-position: 85% center;
+    background-position: center;
 }
 
 .hero h2 {
