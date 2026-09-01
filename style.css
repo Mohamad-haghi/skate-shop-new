@@ -1,6 +1,12 @@
-/* =========================
+/* =========================================================
+   SKATE SHOP
+   CLEAN MASTER CSS
+   ========================================================= */
+
+
+/* =========================================================
    RESET
-========================= */
+   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -24,74 +30,153 @@ a {
 }
 
 
-/* =========================
-   NAVIGATION
-========================= */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
-nav {
+.site-header {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+
+    width: 100%;
+    min-height: 72px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 18px 6%;
+    padding: 0 5%;
 
-    background: rgba(17, 17, 17, 0.96);
+    background: #050505;
+    border-bottom: 1px solid #252525;
 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
-nav h1 {
-    color: #fff;
-    font-size: 25px;
-    font-weight: 800;
+
+/* Logo */
+
+.site-header .logo {
+    display: inline-block;
+
+    padding: 7px 11px;
+
+    background: #ffff00;
+    color: #050505;
+
+    font-size: 21px;
+    font-weight: 900;
     letter-spacing: 1px;
+
+    white-space: nowrap;
+
+    transform: skew(-5deg);
+
+    transition: 0.25s;
 }
 
-.menu {
+.site-header .logo:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+
+/* Navigation */
+
+.main-nav {
     display: flex;
     align-items: center;
-    gap: 28px;
+    justify-content: center;
+
+    gap: 25px;
 }
 
-.menu a {
+.main-nav a {
     position: relative;
 
-    color: #fff;
-    font-size: 15px;
+    color: #ffffff;
 
-    transition: 0.3s;
+    font-size: 14px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: color 0.25s ease;
 }
 
-.menu a:hover {
-    color: #ffff00;
-}
-
-.menu a::after {
+.main-nav a::after {
     content: "";
 
     position: absolute;
+
     right: 0;
-    bottom: -6px;
+    bottom: -7px;
 
     width: 0;
     height: 2px;
 
     background: #ffff00;
 
-    transition: 0.3s;
+    transition: width 0.25s ease;
 }
 
-.menu a:hover::after {
+.main-nav a:hover {
+    color: #ffff00;
+}
+
+.main-nav a:hover::after {
     width: 100%;
 }
 
-/* =========================
+
+/* Cart */
+
+.header-cart {
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    text-decoration: none;
+}
+
+.header-cart span {
+    position: absolute;
+
+    top: -2px;
+    right: -4px;
+
+    min-width: 17px;
+    height: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 3px;
+
+    background: #ffff00;
+    color: #000000;
+
+    border-radius: 50%;
+
+    font-size: 10px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
    HERO
-========================= */
+   ========================================================= */
 
 .hero {
     position: relative;
@@ -104,25 +189,29 @@ nav h1 {
 
     padding: 80px 7%;
 
-    text-align: right;
-
     overflow: hidden;
 
-    color: #fff;
+    color: #ffffff;
+
+    /*
+       New Hero image
+    */
 
     background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.25),
-            rgba(0, 0, 0, 0.65)
-        ),
         url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/5BADEB96-5972-4426-BA2E-320ED4024C9E.png");
 
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 
-/* Dark overlay */
+/*
+   Hero overlay
+
+   فقط یک لایه‌ی بسیار ملایم روی تصویر
+   تا عکس تاریک نشود.
+*/
 
 .hero-overlay {
     position: absolute;
@@ -134,9 +223,9 @@ nav h1 {
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.20) 0%,
-            rgba(0, 0, 0, 0.45) 45%,
-            rgba(0, 0, 0, 0.75) 100%
+            rgba(0, 0, 0, 0.08) 0%,
+            rgba(0, 0, 0, 0.20) 50%,
+            rgba(0, 0, 0, 0.45) 100%
         );
 }
 
@@ -154,13 +243,15 @@ nav h1 {
     margin: 0 auto;
 
     padding: 20px;
+
+    text-align: right;
 }
 
 
 /* Small title */
 
 .hero-small-title {
-    margin: 0 0 15px;
+    margin-bottom: 15px;
 
     color: #ffff00;
 
@@ -176,7 +267,7 @@ nav h1 {
 .hero-content h1 {
     margin: 0;
 
-    color: #fff;
+    color: #ffffff;
 
     font-family: Impact, "Arial Black", Arial, sans-serif;
 
@@ -199,7 +290,7 @@ nav h1 {
 
     margin: 28px 0;
 
-    color: #eee;
+    color: #eeeeee;
 
     font-size: 18px;
 
@@ -207,11 +298,10 @@ nav h1 {
 }
 
 
-/* Buttons */
+/* Hero buttons */
 
 .hero-actions {
     display: flex;
-
     align-items: center;
 
     gap: 14px;
@@ -219,12 +309,8 @@ nav h1 {
     flex-wrap: wrap;
 }
 
-
 .hero-actions .hero-button {
-    position: relative;
-
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
 
@@ -235,10 +321,7 @@ nav h1 {
     border-radius: 0;
 
     font-size: 15px;
-
     font-weight: 800;
-
-    text-decoration: none;
 
     box-shadow: none;
 
@@ -249,23 +332,21 @@ nav h1 {
 }
 
 
-/* Main button */
+/* Primary */
 
 .hero-actions .hero-button.primary {
     background: #ffff00;
-
-    color: #000;
+    color: #000000;
 }
 
 
-/* Second button */
+/* Secondary */
 
 .hero-actions .hero-button.secondary {
     background: transparent;
+    color: #ffffff;
 
-    color: #fff;
-
-    border: 1px solid #fff;
+    border: 1px solid #ffffff;
 }
 
 
@@ -275,138 +356,20 @@ nav h1 {
     transform: translateY(-3px);
 }
 
-
 .hero-actions .hero-button.primary:hover {
-    background: #fff;
-
-    color: #000;
+    background: #ffffff;
+    color: #000000;
 }
-
 
 .hero-actions .hero-button.secondary:hover {
-    background: #fff;
-
-    color: #000;
+    background: #ffffff;
+    color: #000000;
 }
 
 
-/* =========================
-   HERO MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-    .hero {
-        min-height: 600px;
-
-        align-items: flex-end;
-
-        padding: 40px 20px 55px;
-
-        background-position: center;
-    }
-
-
-    .hero-overlay {
-        background:
-            linear-gradient(
-                180deg,
-                rgba(0, 0, 0, 0.20) 0%,
-                rgba(0, 0, 0, 0.55) 50%,
-                rgba(0, 0, 0, 0.90) 100%
-            );
-    }
-
-
-    .hero-content {
-        padding: 0;
-
-        text-align: right;
-    }
-
-
-    .hero-small-title {
-        margin-bottom: 10px;
-
-        font-size: 11px;
-
-        letter-spacing: 2px;
-    }
-
-
-    .hero-content h1 {
-        font-size: clamp(58px, 18vw, 90px);
-
-        line-height: 0.88;
-    }
-
-
-    .hero-content .hero-description {
-        max-width: 330px;
-
-        margin: 22px 0;
-
-        font-size: 15px;
-
-        line-height: 1.8;
-    }
-
-
-    .hero-actions {
-        width: 100%;
-
-        gap: 10px;
-    }
-
-
-    .hero-actions .hero-button {
-        flex: 1;
-
-        min-width: 0;
-
-        padding: 13px 14px;
-
-        font-size: 13px;
-    }
-
-}
-
-
-/* =========================
-   VERY SMALL PHONES
-========================= */
-
-@media (max-width: 380px) {
-
-    .hero {
-        min-height: 570px;
-
-        padding-bottom: 45px;
-    }
-
-
-    .hero-content h1 {
-        font-size: 55px;
-    }
-
-
-    .hero-actions {
-        flex-direction: column;
-    }
-
-
-    .hero-actions .hero-button {
-        width: 100%;
-
-        flex: none;
-    }
-
-}
-
-
-/* =========================
+/* =========================================================
    SECTION TITLES
-========================= */
+   ========================================================= */
 
 .products h2,
 .gallery h2,
@@ -421,14 +384,14 @@ nav h1 {
 .products > p,
 .gallery > p,
 .contact > p {
-    color: #666;
+    color: #666666;
     font-size: 18px;
 }
 
 
-/* =========================
+/* =========================================================
    PRODUCTS
-========================= */
+   ========================================================= */
 
 .products {
     padding: 100px 6%;
@@ -457,7 +420,7 @@ nav h1 {
 .product-card {
     overflow: hidden;
 
-    background: #fff;
+    background: #ffffff;
 
     border: 1px solid #e5e5e5;
 
@@ -500,17 +463,20 @@ nav h1 {
 .product-card p {
     margin: 8px 20px;
 
-    color: #666;
+    color: #666666;
 }
 
 .product-card p:last-of-type {
     margin-top: 18px;
 
-    color: #111;
+    color: #111111;
 
     font-size: 18px;
     font-weight: bold;
 }
+
+
+/* Product button */
 
 .product-button {
     display: inline-block;
@@ -519,8 +485,8 @@ nav h1 {
 
     padding: 11px 25px;
 
-    background: #111;
-    color: #fff;
+    background: #111111;
+    color: #ffffff;
 
     border-radius: 8px;
 
@@ -532,22 +498,22 @@ nav h1 {
 
 .product-button:hover {
     background: #ffff00;
-    color: #111;
+    color: #111111;
 
     transform: translateY(-2px);
 }
 
 
-/* =========================
+/* =========================================================
    GALLERY
-========================= */
+   ========================================================= */
 
 .gallery {
     padding: 100px 6%;
 
     text-align: center;
 
-    background: #fff;
+    background: #ffffff;
 }
 
 .gallery > p {
@@ -584,13 +550,13 @@ nav h1 {
 .gallery-container img:hover {
     transform: scale(1.03);
 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.20);
 }
 
 
-/* =========================
+/* =========================================================
    ABOUT
-========================= */
+   ========================================================= */
 
 .about {
     padding: 100px 6%;
@@ -605,7 +571,7 @@ nav h1 {
 
     margin: 0 auto 20px;
 
-    color: #555;
+    color: #555555;
 
     font-size: 18px;
 }
@@ -617,22 +583,22 @@ nav h1 {
 }
 
 .about div p {
-    color: #666;
+    color: #666666;
 
     font-size: 17px;
 }
 
 
-/* =========================
+/* =========================================================
    CONTACT
-========================= */
+   ========================================================= */
 
 .contact {
     padding: 100px 6%;
 
     text-align: center;
 
-    background: #eee;
+    background: #eeeeee;
 }
 
 .contact > p {
@@ -643,7 +609,6 @@ nav h1 {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 20px;
@@ -656,8 +621,8 @@ nav h1 {
 
     padding: 14px 22px;
 
-    background: #111;
-    color: #fff;
+    background: #111111;
+    color: #ffffff;
 
     border-radius: 10px;
 
@@ -669,15 +634,15 @@ nav h1 {
 
 .contact div a:hover {
     background: #ffff00;
-    color: #111;
+    color: #111111;
 
     transform: translateY(-3px);
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+   ========================================================= */
 
 footer {
     display: grid;
@@ -688,9 +653,9 @@ footer {
 
     padding: 55px 6%;
 
-    background: #111;
+    background: #111111;
 
-    color: #fff;
+    color: #ffffff;
 }
 
 footer h3 {
@@ -700,7 +665,7 @@ footer h3 {
 }
 
 footer p {
-    color: #bbb;
+    color: #bbbbbb;
 
     line-height: 1.9;
 }
@@ -710,7 +675,7 @@ footer a {
 
     margin-bottom: 10px;
 
-    color: #bbb;
+    color: #bbbbbb;
 
     transition: 0.3s;
 }
@@ -722,9 +687,9 @@ footer a:hover {
 }
 
 
-/* =========================
+/* =========================================================
    PRODUCT DETAIL
-========================= */
+   ========================================================= */
 
 .product-detail {
     max-width: 800px;
@@ -733,7 +698,7 @@ footer a:hover {
 
     padding: 35px;
 
-    background: #fff;
+    background: #ffffff;
 
     border-radius: 18px;
 
@@ -773,7 +738,7 @@ footer a:hover {
 .product-detail p:last-of-type {
     margin-top: 20px;
 
-    color: #111;
+    color: #111111;
 
     font-size: 22px;
     font-weight: bold;
@@ -788,8 +753,8 @@ footer a:hover {
 
     padding: 13px 20px;
 
-    background: #111;
-    color: #fff;
+    background: #111111;
+    color: #ffffff;
 
     border-radius: 9px;
 
@@ -798,25 +763,33 @@ footer a:hover {
 
 .product-detail a:hover {
     background: #ffff00;
-    color: #111;
+    color: #111111;
 }
 
 .product-detail a.order-button {
     background: #ffff00;
-    color: #111;
+    color: #111111;
 }
 
 .product-detail a.order-button:hover {
-    background: #111;
-    color: #fff;
+    background: #111111;
+    color: #ffffff;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
+
+    .main-nav {
+        gap: 15px;
+    }
+
+    .main-nav a {
+        font-size: 12px;
+    }
 
     .product-container,
     .gallery-container {
@@ -829,59 +802,156 @@ footer a:hover {
 }
 
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 600px) {
 
-    /* Navigation */
+    /* Header */
 
-    nav {
-        flex-direction: column;
+    .site-header {
+        min-height: 64px;
 
-        gap: 18px;
+        padding: 0 15px;
 
-        padding: 18px 15px;
+        gap: 10px;
     }
 
-    nav h1 {
-        font-size: 22px;
+    .site-header .logo {
+        padding: 6px 8px;
+
+        font-size: 15px;
     }
 
-    .menu {
-        width: 100%;
+    .main-nav {
+        flex: 1;
 
-        justify-content: center;
+        justify-content: flex-start;
 
-        gap: 15px;
+        gap: 14px;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
     }
 
-    .menu a {
-        font-size: 13px;
+    .main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .main-nav a {
+        flex: 0 0 auto;
+
+        font-size: 11px;
+    }
+
+    .main-nav a::after {
+        display: none;
+    }
+
+    .header-cart {
+        flex: 0 0 auto;
+
+        width: 32px;
+        height: 32px;
+
+        font-size: 17px;
+    }
+
+    .header-cart span {
+        top: -4px;
+        right: -5px;
+
+        min-width: 16px;
+        height: 16px;
+
+        font-size: 9px;
     }
 
 
     /* Hero */
 
     .hero {
-        min-height: 500px;
+        min-height: 600px;
 
-        padding: 60px 20px;
+        align-items: flex-end;
+
+        padding: 40px 20px 55px;
+
+        background-position: center center;
     }
 
-    .hero h2 {
-        font-size: 31px;
+    .hero-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.05) 0%,
+                rgba(0, 0, 0, 0.18) 50%,
+                rgba(0, 0, 0, 0.55) 100%
+            );
     }
 
-    .hero p {
-        font-size: 16px;
+    .hero-content {
+        padding: 0;
     }
 
-    .hero-button {
-        padding: 13px 25px;
+    .hero-small-title {
+        margin-bottom: 10px;
+
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(58px, 18vw, 90px);
+
+        line-height: 0.88;
+    }
+
+    .hero-content .hero-description {
+        max-width: 330px;
+
+        margin: 22px 0;
+
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    .hero-actions {
+        width: 100%;
+
+        gap: 10px;
+    }
+
+    .hero-actions .hero-button {
+        flex: 1;
+
+        min-width: 0;
+
+        padding: 13px 14px;
+
+        font-size: 13px;
     }
 
 
-    /* Products */
+    /* Sections */
 
     .products {
+        padding: 70px 20px;
+    }
+
+    .gallery {
+        padding: 70px 20px;
+    }
+
+    .about {
+        padding: 70px 20px;
+    }
+
+    .contact {
         padding: 70px 20px;
     }
 
@@ -898,6 +968,9 @@ footer a:hover {
         font-size: 16px;
     }
 
+
+    /* Product grid */
+
     .product-container,
     .gallery-container {
         grid-template-columns: 1fr;
@@ -912,27 +985,12 @@ footer a:hover {
 
     /* Gallery */
 
-    .gallery {
-        padding: 70px 20px;
-    }
-
     .gallery-container img {
         height: 260px;
     }
 
 
-    /* About */
-
-    .about {
-        padding: 70px 20px;
-    }
-
-
     /* Contact */
-
-    .contact {
-        padding: 70px 20px;
-    }
 
     .contact div {
         flex-direction: column;
@@ -945,7 +1003,7 @@ footer a:hover {
     }
 
 
-    /* Product Detail */
+    /* Product detail */
 
     .product-detail {
         margin: 30px 15px;
@@ -990,539 +1048,9 @@ footer a:hover {
 }
 
 
-/* =====================================================
-   SKATE SHOP
-   STEP 1 — FIGMA HEADER + HERO
-   ===================================================== */
-
-
-/* =========================
-   NEW HEADER
-========================= */
-
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    width: 100%;
-    min-height: 72px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 5%;
-
-    background: #050505;
-    border-bottom: 1px solid #252525;
-
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-}
-
-
-/* Logo */
-
-.site-header .logo {
-    display: inline-block;
-
-    padding: 7px 11px;
-
-    background: #ffff00;
-    color: #050505;
-
-    font-size: 21px;
-    font-weight: 900;
-    letter-spacing: 1px;
-
-    text-decoration: none;
-
-    white-space: nowrap;
-
-    transform: skew(-5deg);
-}
-
-
-/* Navigation */
-
-.main-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 25px;
-}
-
-
-.main-nav a {
-    position: relative;
-
-    color: #ffffff;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    text-decoration: none;
-
-    transition: color 0.25s ease;
-}
-
-
-.main-nav a::after {
-    content: "";
-
-    position: absolute;
-
-    right: 0;
-    bottom: -7px;
-
-    width: 0;
-    height: 2px;
-
-    background: #ffff00;
-
-    transition: width 0.25s ease;
-}
-
-
-.main-nav a:hover {
-    color: #ffff00;
-}
-
-
-.main-nav a:hover::after {
-    width: 100%;
-}
-
-
-/* Cart */
-
-.header-cart {
-    position: relative;
-
-    width: 40px;
-    height: 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #ffffff;
-
-    font-size: 20px;
-
-    text-decoration: none;
-}
-
-
-.header-cart span {
-    position: absolute;
-
-    top: -2px;
-    right: -4px;
-
-    min-width: 17px;
-    height: 17px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0 3px;
-
-    background: #ffff00;
-    color: #000000;
-
-    border-radius: 50%;
-
-    font-size: 10px;
-    font-weight: 900;
-}
-
-
-/* =========================
-   NEW HERO
-========================= */
-
-.hero {
-    position: relative;
-
-    min-height: 650px;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    padding: 80px 7%;
-
-    text-align: right;
-
-    overflow: hidden;
-
-    color: #ffffff;
-
-    background-image:
-        url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/IMG_0952.jpeg");
-
-    background-size: cover;
-    background-position: center;
-}
-
-
-/* Overlay */
-
-.hero-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 1;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.25) 0%,
-            rgba(0, 0, 0, 0.60) 45%,
-            rgba(0, 0, 0, 0.90) 100%
-        );
-}
-
-
-/* Hero content */
-
-.hero-content {
-    position: relative;
-
-    z-index: 2;
-
-    width: 100%;
-    max-width: 1150px;
-
-    margin: 0 auto;
-
-    padding: 20px;
-}
-
-
-/* Small title */
-
-.hero-small-title {
-    margin: 0 0 15px;
-
-    color: #ffff00;
-
-    font-size: 14px;
-    font-weight: 900;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-}
-
-
-/* Main title */
-
-.hero-content h1 {
-    margin: 0;
-
-    color: #ffffff;
-
-    font-family: Impact, "Arial Black", Arial, sans-serif;
-
-    font-size: clamp(65px, 10vw, 135px);
-
-    font-weight: 900;
-
-    line-height: 0.88;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-
-/* Description */
-
-.hero-content .hero-description {
-    max-width: 480px;
-
-    margin: 28px 0;
-
-    color: #eeeeee;
-
-    font-size: 18px;
-    line-height: 1.9;
-}
-
-
-/* Buttons container */
-
-.hero-actions {
-    display: flex;
-    align-items: center;
-
-    gap: 14px;
-
-    flex-wrap: wrap;
-}
-
-
-/* Hero buttons */
-
-.hero-actions .hero-button {
-    position: relative;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-width: 155px;
-
-    padding: 14px 25px;
-
-    border-radius: 0;
-
-    font-size: 15px;
-    font-weight: 800;
-
-    text-decoration: none;
-
-    box-shadow: none;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
-}
-
-
-/* Primary button */
-
-.hero-actions .hero-button.primary {
-    background: #ffff00;
-    color: #000000;
-}
-
-
-/* Secondary button */
-
-.hero-actions .hero-button.secondary {
-    background: transparent;
-    color: #ffffff;
-
-    border: 1px solid #ffffff;
-}
-
-
-/* Hover */
-
-.hero-actions .hero-button:hover {
-    transform: translateY(-3px);
-}
-
-
-.hero-actions .hero-button.primary:hover {
-    background: #ffffff;
-    color: #000000;
-}
-
-
-.hero-actions .hero-button.secondary:hover {
-    background: #ffffff;
-    color: #000000;
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 900px) {
-
-    .site-header {
-        padding: 0 25px;
-    }
-
-    .main-nav {
-        gap: 15px;
-    }
-
-    .main-nav a {
-        font-size: 12px;
-    }
-
-    .hero {
-        min-height: 600px;
-
-        padding: 70px 5%;
-    }
-
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-    .site-header {
-        min-height: 64px;
-
-        padding: 0 15px;
-
-        gap: 10px;
-    }
-
-
-    .site-header .logo {
-        padding: 6px 8px;
-
-        font-size: 15px;
-    }
-
-
-    /*
-       Mobile navigation:
-       keep it compact and horizontally scrollable
-    */
-
-    .main-nav {
-        flex: 1;
-
-        justify-content: flex-start;
-
-        gap: 14px;
-
-        overflow-x: auto;
-
-        scrollbar-width: none;
-    }
-
-
-    .main-nav::-webkit-scrollbar {
-        display: none;
-    }
-
-
-    .main-nav a {
-        flex: 0 0 auto;
-
-        font-size: 11px;
-
-        white-space: nowrap;
-    }
-
-
-    .main-nav a::after {
-        display: none;
-    }
-
-
-    .header-cart {
-        flex: 0 0 auto;
-
-        width: 32px;
-        height: 32px;
-
-        font-size: 17px;
-    }
-
-
-    .header-cart span {
-        top: -4px;
-        right: -5px;
-
-        min-width: 16px;
-        height: 16px;
-
-        font-size: 9px;
-    }
-
-
-    /* Hero */
-
-    .hero {
-        min-height: 600px;
-
-        align-items: flex-end;
-
-        padding: 40px 20px 55px;
-
-        background-position: center;
-    }
-
-
-    .hero-overlay {
-        background:
-            linear-gradient(
-                180deg,
-                rgba(0, 0, 0, 0.25) 0%,
-                rgba(0, 0, 0, 0.65) 50%,
-                rgba(0, 0, 0, 0.95) 100%
-            );
-    }
-
-
-    .hero-content {
-        padding: 0;
-
-        text-align: right;
-    }
-
-
-    .hero-small-title {
-        margin-bottom: 10px;
-
-        font-size: 11px;
-
-        letter-spacing: 2px;
-    }
-
-
-    .hero-content h1 {
-        font-size: clamp(58px, 18vw, 90px);
-
-        line-height: 0.88;
-
-        letter-spacing: 1px;
-    }
-
-
-    .hero-content .hero-description {
-        max-width: 330px;
-
-        margin: 22px 0;
-
-        font-size: 15px;
-
-        line-height: 1.8;
-    }
-
-
-    .hero-actions {
-        width: 100%;
-
-        gap: 10px;
-    }
-
-
-    .hero-actions .hero-button {
-        flex: 1;
-
-        min-width: 0;
-
-        padding: 13px 14px;
-
-        font-size: 13px;
-    }
-
-}
-
-
-/* =========================
+/* =========================================================
    VERY SMALL PHONES
-========================= */
+   ========================================================= */
 
 @media (max-width: 380px) {
 
@@ -1530,16 +1058,13 @@ footer a:hover {
         font-size: 13px;
     }
 
-
     .main-nav {
         gap: 10px;
     }
 
-
     .main-nav a {
         font-size: 10px;
     }
-
 
     .hero {
         min-height: 570px;
@@ -1547,44 +1072,17 @@ footer a:hover {
         padding-bottom: 45px;
     }
 
-
     .hero-content h1 {
         font-size: 55px;
     }
 
-
     .hero-actions {
         flex-direction: column;
     }
-
 
     .hero-actions .hero-button {
         width: 100%;
 
         flex: none;
     }
-
-}
-
-.hero {
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.25),
-            rgba(0, 0, 0, 0.65)
-        ),
-        url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/5BADEB96-5972-4426-BA2E-320ED4024C9E.png") !important;
-
-    background-size: cover !important;
-    background-position: center !important;
-}
-
-/* Hero — remove extra darkness */
-
-.hero {
-    background-image:
-        url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/5BADEB96-5972-4426-BA2E-320ED4024C9E.png") !important;
-}
-
-.hero-overlay {
-    background: rgba(0, 0, 0, 0.20) !important;
 }
