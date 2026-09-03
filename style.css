@@ -40,7 +40,7 @@ a {
     z-index: 1000;
 
     width: 100%;
-    min-height: 72px;
+    min-height: 74px;
 
     display: flex;
     align-items: center;
@@ -58,9 +58,10 @@ a {
 /* Logo */
 
 .site-header .logo {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
 
-    padding: 7px 11px;
+    padding: 8px 12px;
 
     background: #ffff00;
     color: #050505;
@@ -73,7 +74,7 @@ a {
 
     transform: skew(-5deg);
 
-    transition: 0.25s;
+    transition: 0.25s ease;
 }
 
 .site-header .logo:hover {
@@ -89,7 +90,9 @@ a {
     align-items: center;
     justify-content: center;
 
-    gap: 25px;
+    gap: 28px;
+
+    margin: 0 auto;
 }
 
 .main-nav a {
@@ -111,7 +114,7 @@ a {
     position: absolute;
 
     right: 0;
-    bottom: -7px;
+    bottom: -8px;
 
     width: 0;
     height: 2px;
@@ -135,8 +138,8 @@ a {
 .header-cart {
     position: relative;
 
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
 
     display: flex;
     align-items: center;
@@ -144,9 +147,9 @@ a {
 
     color: #ffffff;
 
-    font-size: 20px;
+    font-size: 21px;
 
-    text-decoration: none;
+    flex-shrink: 0;
 }
 
 .header-cart span {
@@ -155,8 +158,8 @@ a {
     top: -2px;
     right: -4px;
 
-    min-width: 17px;
-    height: 17px;
+    min-width: 18px;
+    height: 18px;
 
     display: flex;
     align-items: center;
@@ -181,37 +184,35 @@ a {
 .hero {
     position: relative;
 
-    min-height: 650px;
+    min-height: 620px;
 
     display: flex;
     align-items: center;
     justify-content: flex-start;
 
-    padding: 80px 7%;
+    padding: 70px 7%;
 
     overflow: hidden;
 
     color: #ffffff;
 
-    /*
-       New Hero image
-    */
-
     background-image:
-    url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/D927009A-56C1-4673-826C-76F3D60B50B1.png");
+        url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/D927009A-56C1-4673-826C-76F3D60B50B1.png");
 
     background-size: cover;
-    background-position: center center;
+
+    /*
+       مهم:
+       تصویر کمی به سمت راست جابه‌جا شده
+       تا اسکیت‌سوار داخل کادر بماند.
+    */
+    background-position: 58% center;
+
     background-repeat: no-repeat;
 }
 
 
-/*
-   Hero overlay
-
-   فقط یک لایه‌ی بسیار ملایم روی تصویر
-   تا عکس تاریک نشود.
-*/
+/* Hero overlay */
 
 .hero-overlay {
     position: absolute;
@@ -223,9 +224,9 @@ a {
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.08) 0%,
-            rgba(0, 0, 0, 0.20) 50%,
-            rgba(0, 0, 0, 0.45) 100%
+            rgba(0, 0, 0, 0.10) 0%,
+            rgba(0, 0, 0, 0.18) 45%,
+            rgba(0, 0, 0, 0.42) 100%
         );
 }
 
@@ -783,12 +784,22 @@ footer a:hover {
 
 @media (max-width: 900px) {
 
+    .site-header {
+        padding: 0 3%;
+    }
+
     .main-nav {
-        gap: 15px;
+        gap: 18px;
     }
 
     .main-nav a {
         font-size: 12px;
+    }
+
+    .hero {
+        min-height: 600px;
+
+        background-position: 60% center;
     }
 
     .product-container,
@@ -813,15 +824,15 @@ footer a:hover {
     .site-header {
         min-height: 64px;
 
-        padding: 0 15px;
+        padding: 0 12px;
 
-        gap: 10px;
+        gap: 8px;
     }
 
     .site-header .logo {
         padding: 6px 8px;
 
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .main-nav {
@@ -829,11 +840,15 @@ footer a:hover {
 
         justify-content: flex-start;
 
-        gap: 14px;
+        gap: 15px;
+
+        margin: 0;
 
         overflow-x: auto;
 
         scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
     }
 
     .main-nav::-webkit-scrollbar {
@@ -873,22 +888,27 @@ footer a:hover {
     /* Hero */
 
     .hero {
-        min-height: 600px;
+        min-height: 590px;
 
         align-items: flex-end;
 
-        padding: 40px 20px 55px;
+        padding: 40px 20px 50px;
 
-        background-position: center center;
+        /*
+           موبایل:
+           تصویر کمی به سمت راست
+           تا سوژه داخل کادر بماند.
+        */
+        background-position: 62% center;
     }
 
     .hero-overlay {
         background:
             linear-gradient(
                 180deg,
-                rgba(0, 0, 0, 0.05) 0%,
-                rgba(0, 0, 0, 0.18) 50%,
-                rgba(0, 0, 0, 0.55) 100%
+                rgba(0, 0, 0, 0.04) 0%,
+                rgba(0, 0, 0, 0.16) 48%,
+                rgba(0, 0, 0, 0.58) 100%
             );
     }
 
@@ -1055,11 +1075,13 @@ footer a:hover {
 @media (max-width: 380px) {
 
     .site-header .logo {
-        font-size: 13px;
+        font-size: 12px;
+
+        padding: 6px 7px;
     }
 
     .main-nav {
-        gap: 10px;
+        gap: 11px;
     }
 
     .main-nav a {
@@ -1070,6 +1092,8 @@ footer a:hover {
         min-height: 570px;
 
         padding-bottom: 45px;
+
+        background-position: 64% center;
     }
 
     .hero-content h1 {
