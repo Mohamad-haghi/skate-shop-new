@@ -198,15 +198,10 @@ a {
 
     background-image:
         url("https://raw.githubusercontent.com/Mohamad-haghi/skate-shop-new/refs/heads/main/D927009A-56C1-4673-826C-76F3D60B50B1.png");
-
-    background-size: cover;
-
-    /*
-       مهم:
-       تصویر کمی به سمت راست جابه‌جا شده
-       تا اسکیت‌سوار داخل کادر بماند.
-    */
-    background-position: 58% center;
+background-size: contain;
+background-position: center center;
+background-color: #111111;
+    
 
     background-repeat: no-repeat;
 }
@@ -899,7 +894,9 @@ footer a:hover {
            تصویر کمی به سمت راست
            تا سوژه داخل کادر بماند.
         */
-        background-position: 62% center;
+        background-size: contain;
+background-position: center center;
+background-color: #111111;
     }
 
     .hero-overlay {
@@ -1093,7 +1090,8 @@ footer a:hover {
 
         padding-bottom: 45px;
 
-        background-position: 64% center;
+        background-size: contain;
+background-position: center center;
     }
 
     .hero-content h1 {
