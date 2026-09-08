@@ -1,1 +1,4 @@
-
+@theme {
+  --font-sans: "Vazirmatn", sans-serif;
+  --font-display: "Anton", sans-serif;
+}
