@@ -367,9 +367,14 @@ export default function App() {
                     <span className="text-white/55 text-sm">جمع کل:</span>
                     <span className="font-bold text-[#FFD100]">{formatPrice(totalPrice)}</span>
                   </div>
-                  <button className="w-full bg-[#FFD100] text-black font-bold py-4 text-sm hover:bg-yellow-300 transition-colors">
-                    تکمیل خرید
-                  </button>
+                  <button
+  onClick={() => {
+    alert("فرآیند تکمیل خرید در حال آماده‌سازی است.");
+  }}
+  className="w-full bg-[#FFD100] text-black font-bold py-4 text-sm hover:bg-yellow-300 transition-colors"
+>
+  تکمیل خرید
+</button>
                 </div>
               )}
             </motion.aside>
