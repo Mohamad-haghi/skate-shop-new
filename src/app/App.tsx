@@ -1,4 +1,4 @@
-he import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   ShoppingCart, Menu, X, Search, Instagram, Youtube, Twitter,
   Phone, Mail, MapPin, Minus, Plus, Trash2,
