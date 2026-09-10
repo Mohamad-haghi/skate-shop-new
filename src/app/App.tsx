@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+he import { useState, useEffect } from "react";
 import {
   ShoppingCart, Menu, X, Search, Instagram, Youtube, Twitter,
   Phone, Mail, MapPin, Minus, Plus, Trash2,
@@ -187,6 +187,53 @@ export default function App() {
   phone: "",
   address: "",
 });
+  const handleCheckout = () => {
+  if (!checkoutForm.name.trim()) {
+    alert("لطفاً نام و نام خانوادگی را وارد کنید.");
+    return;
+  }
+
+  if (!checkoutForm.phone.trim()) {
+    alert("لطفاً شماره تماس را وارد کنید.");
+    return;
+  }
+
+  if (!checkoutForm.address.trim()) {
+    alert("لطفاً آدرس را وارد کنید.");
+    return;
+  }
+
+  if (cartItems.length === 0) {
+    alert("سبد خرید شما خالی است.");
+    return;
+  }
+
+  const orderItems = cartItems
+    .map(
+      (item) =>
+        `• ${item.name} × ${item.quantity} — ${formatPrice(
+          item.price * item.quantity
+        )}`
+    )
+    .join("\n");
+
+  const orderMessage = `سلام، می‌خواهم این سفارش را ثبت کنم:
+
+نام: ${checkoutForm.name}
+شماره تماس: ${checkoutForm.phone}
+آدرس: ${checkoutForm.address}
+
+محصولات:
+${orderItems}
+
+مبلغ کل: ${formatPrice(totalPrice)}`;
+
+  const whatsappUrl = `https://wa.me/989332667801?text=${encodeURIComponent(
+    orderMessage
+  )}`;
+
+  window.open(whatsappUrl, "_blank");
+};
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activeCategory, setActiveCategory] = useState("all");
   const [wishlist, setWishlist] = useState<number[]>([]);
@@ -923,17 +970,6 @@ export default function App() {
                   نام و نام خانوادگی
                 </label>
                 <input
-                  type="text"
-                  placeholder="نام خود را وارد کنید"
-                  className="w-full bg-white/[0.04] border border-white/[0.08] text-white px-4 py-3 outline-none focus:border-[#FFD100]"
-                />
-              </div>
-
-              <div>
-                <label className="block text-white/60 text-sm mb-2">
-                  شماره تماس
-                </label>
-             <input
   type="text"
   placeholder="نام خود را وارد کنید"
   value={checkoutForm.name}
@@ -941,7 +977,22 @@ export default function App() {
     setCheckoutForm((prev) => ({ ...prev, name: e.target.value }))
   }
   className="w-full bg-white/[0.04] border border-white/[0.08] text-white px-4 py-3 outline-none focus:border-[#FFD100]"
-/>   
+/>
+              </div>
+
+              <div>
+                <label className="block text-white/60 text-sm mb-2">
+                  شماره تماس
+                </label>
+              <input
+  type="tel"
+  placeholder="09xxxxxxxxx"
+  value={checkoutForm.phone}
+  onChange={(e) =>
+    setCheckoutForm((prev) => ({ ...prev, phone: e.target.value }))
+  }
+  className="w-full bg-white/[0.04] border border-white/[0.08] text-white px-4 py-3 outline-none focus:border-[#FFD100]"
+/>
               </div>
 
               <div>
@@ -949,10 +1000,14 @@ export default function App() {
                   آدرس
                 </label>
                 <textarea
-                  rows={4}
-                  placeholder="آدرس کامل برای ارسال سفارش"
-                  className="w-full bg-white/[0.04] border border-white/[0.08] text-white px-4 py-3 outline-none resize-none focus:border-[#FFD100]"
-                />
+  rows={4}
+  placeholder="آدرس کامل برای ارسال سفارش"
+  value={checkoutForm.address}
+  onChange={(e) =>
+    setCheckoutForm((prev) => ({ ...prev, address: e.target.value }))
+  }
+  className="w-full bg-white/[0.04] border border-white/[0.08] text-white px-4 py-3 outline-none resize-none focus:border-[#FFD100]"
+/>
               </div>
 
               <div className="border-t border-white/[0.06] pt-4">
@@ -965,7 +1020,7 @@ export default function App() {
               </div>
 
               <button
-                onClick={() => alert("مرحله ارسال سفارش بعد از تکمیل فرم اضافه می‌شود.")}
+                onClick={handleCheckout}
                 className="w-full bg-[#FFD100] text-black font-bold py-4 hover:bg-yellow-300 transition-colors"
               >
                 ادامه و ثبت سفارش
