@@ -233,6 +233,7 @@ ${orderItems}
   )}`;
 
   window.open(whatsappUrl, "_blank");
+    setCheckoutOpen(false);
 };
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activeCategory, setActiveCategory] = useState("all");
