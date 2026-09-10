@@ -890,6 +890,82 @@ export default function App() {
           </div>
         </div>
       </footer>
+           {/* Checkout Modal */}
+      {checkoutOpen && (
+        <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="w-full max-w-lg bg-[#111] border border-white/[0.08] max-h-[90vh] overflow-y-auto">
+
+            <div className="flex items-center justify-between p-5 border-b border-white/[0.06]">
+              <div>
+                <h2 className="text-white text-xl font-bold">تکمیل خرید</h2>
+                <p className="text-white/40 text-xs mt-1">
+                  اطلاعات ارسال سفارش را وارد کنید
+                </p>
+              </div>
+
+              <button
+                onClick={() => setCheckoutOpen(false)}
+                className="text-white/50 hover:text-white text-2xl"
+              >
+                ×
+              </button>
+            </div>
+
+            <div className="p-5 space-y-5">
+
+              <div>
+                <label className="block text-white/60 text-sm mb-2">
+                  نام و نام خانوادگی
+                </label>
+                <input
+                  type="text"
+                  placeholder="نام خود را وارد کنید"
+                  className="w-full bg-white/[0.04] border border-white/[0.08] text-white px-4 py-3 outline-none focus:border-[#FFD100]"
+                />
+              </div>
+
+              <div>
+                <label className="block text-white/60 text-sm mb-2">
+                  شماره تماس
+                </label>
+                <input
+                  type="tel"
+                  placeholder="09xxxxxxxxx"
+                  className="w-full bg-white/[0.04] border border-white/[0.08] text-white px-4 py-3 outline-none focus:border-[#FFD100]"
+                />
+              </div>
+
+              <div>
+                <label className="block text-white/60 text-sm mb-2">
+                  آدرس
+                </label>
+                <textarea
+                  rows={4}
+                  placeholder="آدرس کامل برای ارسال سفارش"
+                  className="w-full bg-white/[0.04] border border-white/[0.08] text-white px-4 py-3 outline-none resize-none focus:border-[#FFD100]"
+                />
+              </div>
+
+              <div className="border-t border-white/[0.06] pt-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-white/50 text-sm">مبلغ سفارش</span>
+                  <span className="text-[#FFD100] font-bold">
+                    {formatPrice(totalPrice)}
+                  </span>
+                </div>
+              </div>
+
+              <button
+                onClick={() => alert("مرحله ارسال سفارش بعد از تکمیل فرم اضافه می‌شود.")}
+                className="w-full bg-[#FFD100] text-black font-bold py-4 hover:bg-yellow-300 transition-colors"
+              >
+                ادامه و ثبت سفارش
+              </button>
+
+            </div>
+          </div>
+        </div>
+      )} 
 
     </div>
   );
