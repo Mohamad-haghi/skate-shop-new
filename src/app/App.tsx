@@ -181,6 +181,7 @@ export default function App() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activeCategory, setActiveCategory] = useState("all");
   const [wishlist, setWishlist] = useState<number[]>([]);
@@ -368,9 +369,7 @@ export default function App() {
                     <span className="font-bold text-[#FFD100]">{formatPrice(totalPrice)}</span>
                   </div>
                   <button
-  onClick={() => {
-    alert("فرآیند تکمیل خرید در حال آماده‌سازی است.");
-  }}
+  onClick={() => setCheckoutOpen(true)}
   className="w-full bg-[#FFD100] text-black font-bold py-4 text-sm hover:bg-yellow-300 transition-colors"
 >
   تکمیل خرید
