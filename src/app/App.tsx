@@ -933,11 +933,15 @@ export default function App() {
                 <label className="block text-white/60 text-sm mb-2">
                   شماره تماس
                 </label>
-                <input
-                  type="tel"
-                  placeholder="09xxxxxxxxx"
-                  className="w-full bg-white/[0.04] border border-white/[0.08] text-white px-4 py-3 outline-none focus:border-[#FFD100]"
-                />
+             <input
+  type="text"
+  placeholder="نام خود را وارد کنید"
+  value={checkoutForm.name}
+  onChange={(e) =>
+    setCheckoutForm((prev) => ({ ...prev, name: e.target.value }))
+  }
+  className="w-full bg-white/[0.04] border border-white/[0.08] text-white px-4 py-3 outline-none focus:border-[#FFD100]"
+/>   
               </div>
 
               <div>
