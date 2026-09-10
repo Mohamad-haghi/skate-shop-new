@@ -187,6 +187,8 @@ export default function App() {
   phone: "",
   address: "",
 });
+  const [orderComplete, setOrderComplete] = useState(false);
+const [lastOrderNumber, setLastOrderNumber] = useState("");
   const handleCheckout = () => {
   if (!checkoutForm.name.trim()) {
     alert("لطفاً نام و نام خانوادگی را وارد کنید.");
@@ -229,12 +231,29 @@ ${orderItems}
 مبلغ کل: ${formatPrice(totalPrice)}`;
 
   const whatsappUrl = `https://wa.me/989332667801?text=${encodeURIComponent(
-    orderMessage
-  )}`;
+  orderMessage
+)}`;
 
+const orderNumber = `SK-${Date.now().toString().slice(-8)}`;
+
+setLastOrderNumber(orderNumber);
+setOrderComplete(true);
+setCheckoutOpen(false);
+
+localStorage.setItem(
+  "skateShopLastOrder",
+  JSON.stringify({
+    orderNumber,
+    customer: checkoutForm,
+    items: cartItems,
+    total: totalPrice,
+    createdAt: new Date().toISOString(),
+  })
+);
+
+setTimeout(() => {
   window.open(whatsappUrl, "_blank");
-    setCheckoutOpen(false);
-};
+}, 150);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activeCategory, setActiveCategory] = useState("all");
   const [wishlist, setWishlist] = useState<number[]>([]);
@@ -1031,6 +1050,87 @@ ${orderItems}
           </div>
         </div>
       )} 
+      {/* Order Confirmation */}
+{orderComplete && (
+  <div className="fixed inset-0 z-[110] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4">
+    <div className="w-full max-w-lg bg-[#111] border border-white/[0.08]">
+
+      <div className="p-6 text-center border-b border-white/[0.06]">
+        <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-[#FFD100] flex items-center justify-center">
+          <span className="text-black text-3xl font-bold">✓</span>
+        </div>
+
+        <h2 className="text-white text-2xl font-bold">
+          سفارش آماده شد
+        </h2>
+
+        <p className="text-white/50 text-sm mt-2 leading-6">
+          سفارش شما آماده ارسال در WhatsApp است.
+          <br />
+          پیام سفارش را در WhatsApp ارسال کنید.
+        </p>
+      </div>
+
+      <div className="p-6 space-y-5">
+
+        <div className="bg-white/[0.04] border border-white/[0.06] p-4 text-center">
+          <p className="text-white/40 text-xs mb-2">
+            شماره سفارش
+          </p>
+
+          <p className="text-[#FFD100] text-xl font-bold tracking-wider">
+            {lastOrderNumber}
+          </p>
+        </div>
+
+        <div className="bg-white/[0.03] border border-white/[0.06] p-4">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-white/50 text-sm">
+              تعداد کالا
+            </span>
+
+            <span className="text-white font-bold">
+              {totalItems}
+            </span>
+          </div>
+
+          <div className="flex items-center justify-between">
+            <span className="text-white/50 text-sm">
+              مبلغ کل
+            </span>
+
+            <span className="text-[#FFD100] font-bold">
+              {formatPrice(totalPrice)}
+            </span>
+          </div>
+        </div>
+
+        <button
+          onClick={() => setOrderComplete(false)}
+          className="w-full bg-[#FFD100] text-black font-bold py-4 hover:bg-yellow-300 transition-colors"
+        >
+          ادامه خرید
+        </button>
+
+        <button
+          onClick={() => {
+            const savedOrder = localStorage.getItem("skateShopLastOrder");
+
+            if (savedOrder) {
+              alert(
+                `شماره سفارش شما:\n${lastOrderNumber}\n\nسفارش در مرورگر شما ذخیره شده است.`
+              );
+            }
+          }}
+          className="w-full border border-white/[0.12] text-white py-4 hover:bg-white/[0.05] transition-colors"
+        >
+          پیگیری سفارش
+        </button>
+
+      </div>
+    </div>
+  </div>
+)}
 
     </div>
   );
