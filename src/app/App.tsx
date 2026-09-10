@@ -182,6 +182,11 @@ export default function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const [checkoutForm, setCheckoutForm] = useState({
+  name: "",
+  phone: "",
+  address: "",
+});
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activeCategory, setActiveCategory] = useState("all");
   const [wishlist, setWishlist] = useState<number[]>([]);
