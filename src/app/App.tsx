@@ -254,6 +254,7 @@ localStorage.setItem(
 setTimeout(() => {
   window.open(whatsappUrl, "_blank");
 }, 150);
+  };
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activeCategory, setActiveCategory] = useState("all");
   const [wishlist, setWishlist] = useState<number[]>([]);
