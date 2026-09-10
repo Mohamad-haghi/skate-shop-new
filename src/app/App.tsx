@@ -1133,7 +1133,6 @@ setTimeout(() => {
   </div>
 )}
     </div>
-    </div>
   );
 }
               
