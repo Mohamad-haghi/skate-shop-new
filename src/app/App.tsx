@@ -1131,7 +1131,7 @@ setTimeout(() => {
     </div>
   </div>
 )}
-
+    </div>
     </div>
   );
 }
