@@ -316,44 +316,6 @@ setTimeout(() => {
   const totalItems = cartItems.reduce((s, i) => s + i.quantity, 0);
   const totalPrice = cartItems.reduce((s, i) => s + i.price * i.quantity, 0);
   const filtered = activeCategory === "all" ? PRODUCTS : PRODUCTS.filter((p) => p.category === activeCategory);
-const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-
-  const formData = new FormData(e.currentTarget);
-
-  const name = String(formData.get("name") || "").trim();
-  const phone = String(formData.get("phone") || "").trim();
-  const message = String(formData.get("message") || "").trim();
-
-  if (!name) {
-    alert("لطفاً نام خود را وارد کنید.");
-    return;
-  }
-
-  if (!phone) {
-    alert("لطفاً شماره تماس خود را وارد کنید.");
-    return;
-  }
-
-  if (!message) {
-    alert("لطفاً پیام خود را وارد کنید.");
-    return;
-  }
-
-  const whatsappMessage = `سلام، از طریق سایت SKATE SHOP پیام دارم.
-
-نام: ${name}
-شماره تماس: ${phone}
-
-پیام:
-${message}`;
-
-  const whatsappUrl = `https://wa.me/989332667801?text=${encodeURIComponent(
-    whatsappMessage
-  )}`;
-
-  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-};
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
