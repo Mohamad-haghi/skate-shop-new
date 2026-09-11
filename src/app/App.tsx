@@ -316,7 +316,16 @@ setTimeout(() => {
 
   const totalItems = cartItems.reduce((s, i) => s + i.quantity, 0);
   const totalPrice = cartItems.reduce((s, i) => s + i.price * i.quantity, 0);
-  const filtered = activeCategory === "all" ? PRODUCTS : PRODUCTS.filter((p) => p.category === activeCategory);
+  const filtered = PRODUCTS.filter((p) => {
+  const matchesCategory =
+    activeCategory === "all" || p.category === activeCategory;
+
+  const matchesSearch =
+    searchQuery.trim() === "" ||
+    p.name.toLowerCase().includes(searchQuery.trim().toLowerCase());
+
+  return matchesCategory && matchesSearch;
+});
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
