@@ -259,6 +259,7 @@ setTimeout(() => {
   };
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activeCategory, setActiveCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
   const [wishlist, setWishlist] = useState<number[]>([]);
   const [scrolled, setScrolled] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
