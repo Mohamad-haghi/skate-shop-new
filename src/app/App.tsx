@@ -189,6 +189,8 @@ export default function App() {
 });
   const [orderComplete, setOrderComplete] = useState(false);
 const [lastOrderNumber, setLastOrderNumber] = useState("");
+  const [myOrderOpen, setMyOrderOpen] = useState(false);
+const [myOrder, setMyOrder] = useState<any | null>(null);
   const handleCheckout = () => {
   if (!checkoutForm.name.trim()) {
     alert("لطفاً نام و نام خانوادگی را وارد کنید.");
@@ -266,6 +268,36 @@ setTimeout(() => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+ useEffect(() => {
+  const savedOrder = localStorage.getItem("skateShopLastOrder");
+
+  if (savedOrder) {
+    try {
+      setMyOrder(JSON.parse(savedOrder));
+    } catch {
+      setMyOrder(null);
+    }
+  }
+}, []); 
+  const openMyOrder = () => {
+  const savedOrder = localStorage.getItem("skateShopLastOrder");
+
+  if (savedOrder) {
+    try {
+      const parsedOrder = JSON.parse(savedOrder);
+      setMyOrder(parsedOrder);
+      setMyOrderOpen(true);
+    } catch {
+      setMyOrder(null);
+      setMyOrderOpen(true);
+    }
+  } else {
+    setMyOrder(null);
+    setMyOrderOpen(true);
+  }
+
+  setMenuOpen(false);
+};
 
   const addToCart = (product: Product) => {
     setCartItems((prev) => {
@@ -316,6 +348,12 @@ setTimeout(() => {
                   {label}
                 </button>
               ))}
+              <button
+  onClick={openMyOrder}
+  className="text-sm text-white/55 hover:text-[#FFD100] transition-colors duration-200 font-medium"
+>
+  سفارش من
+</button>
             </nav>
 
             {/* Actions */}
@@ -364,6 +402,12 @@ setTimeout(() => {
                   {label}
                 </motion.button>
               ))}
+              <button
+  onClick={openMyOrder}
+  className="text-right text-4xl font-black text-white/70 hover:text-[#FFD100] transition-colors leading-none"
+>
+  سفارش من
+</button>
             </nav>
             <div className="flex gap-5 text-white/25">
               <Instagram className="w-5 h-5" />
@@ -1139,6 +1183,241 @@ setTimeout(() => {
     </div>
   </div>
 )}
+      {/* My Order */}
+<AnimatePresence>
+  {myOrderOpen && (
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={() => setMyOrderOpen(false)}
+        className="fixed inset-0 z-[120] bg-black/80 backdrop-blur-sm"
+      />
+
+      <motion.div
+        initial={{ opacity: 0, y: 24, scale: 0.98 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 24, scale: 0.98 }}
+        transition={{ duration: 0.25 }}
+        className="fixed inset-3 sm:inset-6 lg:inset-10 z-[130] flex items-center justify-center pointer-events-none"
+      >
+        <div className="pointer-events-auto w-full max-w-2xl max-h-[92vh] overflow-y-auto bg-[#111] border border-white/[0.08]">
+
+          {/* Header */}
+          <div className="flex items-center justify-between p-5 border-b border-white/[0.06]">
+            <div>
+              <h2 className="text-white text-xl font-bold">
+                سفارش من
+              </h2>
+
+              <p className="text-white/40 text-xs mt-1">
+                اطلاعات آخرین سفارش شما
+              </p>
+            </div>
+
+            <button
+              onClick={() => setMyOrderOpen(false)}
+              className="p-2 text-white/50 hover:text-white"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          {!myOrder ? (
+            /* Empty State */
+            <div className="p-10 text-center">
+              <Package className="w-12 h-12 mx-auto mb-5 text-white/20" />
+
+              <h3 className="text-white text-lg font-bold mb-2">
+                هنوز سفارشی ثبت نشده است
+              </h3>
+
+              <p className="text-white/40 text-sm leading-7 mb-7">
+                بعد از ثبت سفارش، اطلاعات سفارش شما در این قسمت نمایش داده می‌شود.
+              </p>
+
+              <button
+                onClick={() => {
+                  setMyOrderOpen(false);
+                  document.getElementById("products")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+                className="bg-[#FFD100] text-black font-bold px-7 py-3 text-sm hover:bg-yellow-300 transition-colors"
+              >
+                مشاهده محصولات
+              </button>
+            </div>
+          ) : (
+            /* Order Data */
+            <div className="p-5 space-y-5">
+
+              {/* Order Number + Status */}
+              <div className="grid sm:grid-cols-2 gap-3">
+
+                <div className="bg-white/[0.04] border border-white/[0.06] p-4">
+                  <p className="text-white/35 text-xs mb-2">
+                    شماره سفارش
+                  </p>
+
+                  <p className="text-[#FFD100] font-bold tracking-wider">
+                    {toPerNum(myOrder.orderNumber)}
+                  </p>
+                </div>
+
+                <div className="bg-white/[0.04] border border-white/[0.06] p-4">
+                  <p className="text-white/35 text-xs mb-2">
+                    وضعیت سفارش
+                  </p>
+
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#FFD100]" />
+
+                    <p className="text-white text-sm font-bold">
+                      در انتظار تأیید فروشنده
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Products */}
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-white font-bold text-sm">
+                    محصولات سفارش
+                  </h3>
+
+                  <span className="text-white/35 text-xs">
+                    {toPerNum(
+                      myOrder.items?.reduce(
+                        (sum: number, item: CartItem) =>
+                          sum + item.quantity,
+                        0
+                      ) || 0
+                    )}{" "}
+                    کالا
+                  </span>
+                </div>
+
+                <div className="space-y-2">
+                  {myOrder.items?.map((item: CartItem) => (
+                    <div
+                      key={item.id}
+                      className="flex items-center gap-3 bg-white/[0.03] border border-white/[0.06] p-3"
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-14 h-16 object-cover bg-[#222] flex-shrink-0"
+                      />
+
+                      <div className="flex-1 min-w-0">
+                        <p className="text-white text-sm font-bold truncate">
+                          {item.name}
+                        </p>
+
+                        <p className="text-white/35 text-xs mt-1">
+                          تعداد: {toPerNum(item.quantity)}
+                        </p>
+                      </div>
+
+                      <div className="text-[#FFD100] text-xs font-bold text-left">
+                        {formatPrice(item.price * item.quantity)}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Customer Information */}
+              <div>
+                <h3 className="text-white font-bold text-sm mb-3">
+                  اطلاعات سفارش
+                </h3>
+
+                <div className="bg-white/[0.03] border border-white/[0.06] p-4 space-y-3">
+
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="text-white/35 text-xs">
+                      نام
+                    </span>
+
+                    <span className="text-white text-sm text-left">
+                      {myOrder.customer?.name || "-"}
+                    </span>
+                  </div>
+
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="text-white/35 text-xs">
+                      شماره تماس
+                    </span>
+
+                    <span className="text-white text-sm text-left" dir="ltr">
+                      {myOrder.customer?.phone || "-"}
+                    </span>
+                  </div>
+
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="text-white/35 text-xs">
+                      آدرس
+                    </span>
+
+                    <span className="text-white/70 text-sm text-left leading-6 max-w-[70%]">
+                      {myOrder.customer?.address || "-"}
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* Total */}
+              <div className="border-t border-white/[0.06] pt-5">
+                <div className="flex items-center justify-between">
+                  <span className="text-white/50 text-sm">
+                    مبلغ کل سفارش
+                  </span>
+
+                  <span className="text-[#FFD100] text-xl font-bold">
+                    {formatPrice(myOrder.total || 0)}
+                  </span>
+                </div>
+              </div>
+
+              {/* Status Notice */}
+              <div className="bg-[#FFD100]/[0.06] border border-[#FFD100]/20 p-4">
+                <p className="text-[#FFD100] text-sm font-bold mb-1">
+                  وضعیت فعلی سفارش
+                </p>
+
+                <p className="text-white/45 text-xs leading-6">
+                  سفارش شما در مرورگر ذخیره شده و پیام سفارش برای فروشنده آماده شده است.
+                  تأیید نهایی سفارش توسط فروشنده انجام می‌شود.
+                </p>
+              </div>
+
+              {/* Continue Shopping */}
+              <button
+                onClick={() => {
+                  setMyOrderOpen(false);
+                  document.getElementById("products")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+                className="w-full bg-[#FFD100] text-black font-bold py-4 hover:bg-yellow-300 transition-colors"
+              >
+                ادامه خرید
+              </button>
+
+            </div>
+          )}
+
+        </div>
+      </motion.div>
+    </>
+  )}
+</AnimatePresence>
     </div>
   );
 }
