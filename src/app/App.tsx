@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import {
   ShoppingCart, Menu, X, Search, Instagram, Youtube, Twitter,
-  Phone, Mail, MapPin, Minus, Plus, Trash2,
+  Phone, Mail, MapPin, Clock, Minus, Plus, Trash2,
   Star, Heart, Package, Truck, Shield, ChevronDown,
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
@@ -909,10 +909,11 @@ ${message}`;
               </p>
               <div className="space-y-6">
                 {[
-                  { icon: MapPin, label: "آدرس", value: "تهران، خیابان ولیعصر، پاساژ اسکیت شاپ، واحد ۱۲" },
-                  { icon: Phone, label: "تلفن", value: "۰۲۱-۸۸۸۸۸۸۸۸" },
-                  { icon: Mail, label: "ایمیل", value: "info@skateshop.ir" },
-                  { icon: Instagram, label: "اینستاگرام", value: "@skateshop.ir" },
+      { icon: MapPin, label: "موقعیت", value: "استان هرمزگان، شهر قشم" },
+{ icon: Phone, label: "تماس", value: "۰۹۳۳۲۶۶۷۸۰۱" },
+{ icon: Mail, label: "ایمیل", value: "mohamadhagi64@gmail.com" },
+{ icon: Instagram, label: "اینستاگرام", value: "@qeshm_skating" },
+   { icon: Clock, label: "ساعات پاسخگویی", value: "ساعات اداری" },   
                 ].map(({ icon: Icon, label, value }) => (
                   <div key={label} className="flex items-start gap-4">
                     <div className="w-10 h-10 border border-[#FFD100]/20 flex items-center justify-center flex-shrink-0">
