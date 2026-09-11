@@ -1107,7 +1107,14 @@ setTimeout(() => {
         </div>
 
         <button
-          onClick={() => setOrderComplete(false)}
+          onClick={() => {
+  setOrderComplete(false);
+  setCheckoutOpen(false);
+  setCartOpen(false);
+  document.getElementById("products")?.scrollIntoView({
+    behavior: "smooth",
+  });
+}}
           className="w-full bg-[#FFD100] text-black font-bold py-4 hover:bg-yellow-300 transition-colors"
         >
           ادامه خرید
