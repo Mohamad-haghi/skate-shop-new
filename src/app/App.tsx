@@ -412,7 +412,7 @@ ${message}`;
             <div className="flex items-center gap-1">
               <button
   onClick={() => setSearchOpen((prev) => !prev)}
-  className="hidden sm:flex p-2.5 text-white/55 hover:text-white transition-colors"
+  className="flex p-2.5 text-white/55 hover:text-white transition-colors"
 >
                 <Search className="w-4 h-4" />
               </button>
