@@ -429,6 +429,21 @@ ${message}`;
               </button>
             </div>
           </div>
+                    {searchOpen && (
+            <div className="pb-4">
+              <div className="relative">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  autoFocus
+                  placeholder="جستجوی محصول..."
+                  className="w-full bg-[#111] border border-white/[0.08] text-white px-4 py-3 pr-10 text-sm focus:border-[#FFD100] focus:outline-none transition-colors placeholder:text-white/20"
+                />
+                <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/35" />
+              </div>
+            </div>
+          )}
         </div>
       </header>
 
