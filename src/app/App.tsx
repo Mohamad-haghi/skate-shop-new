@@ -316,12 +316,91 @@ setTimeout(() => {
   const totalItems = cartItems.reduce((s, i) => s + i.quantity, 0);
   const totalPrice = cartItems.reduce((s, i) => s + i.price * i.quantity, 0);
   const filtered = activeCategory === "all" ? PRODUCTS : PRODUCTS.filter((p) => p.category === activeCategory);
+const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
+  const formData = new FormData(e.currentTarget);
+
+  const name = String(formData.get("name") || "").trim();
+  const phone = String(formData.get("phone") || "").trim();
+  const message = String(formData.get("message") || "").trim();
+
+  if (!name) {
+    alert("لطفاً نام خود را وارد کنید.");
+    return;
+  }
+
+  if (!phone) {
+    alert("لطفاً شماره تماس خود را وارد کنید.");
+    return;
+  }
+
+  if (!message) {
+    alert("لطفاً پیام خود را وارد کنید.");
+    return;
+  }
+
+  const whatsappMessage = `سلام، از طریق سایت SKATE SHOP پیام دارم.
+
+نام: ${name}
+شماره تماس: ${phone}
+
+پیام:
+${message}`;
+
+  const whatsappUrl = `https://wa.me/989332667801?text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
+
+  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+};
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
   };
+const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
+  const name = form.name.trim();
+  const phone = form.phone.trim();
+  const email = form.email.trim();
+  const message = form.message.trim();
+
+  if (!name) {
+    alert("لطفاً نام و نام خانوادگی را وارد کنید.");
+    return;
+  }
+
+  if (!phone) {
+    alert("لطفاً شماره تماس را وارد کنید.");
+    return;
+  }
+
+  if (!email) {
+    alert("لطفاً ایمیل را وارد کنید.");
+    return;
+  }
+
+  if (!message) {
+    alert("لطفاً پیام خود را وارد کنید.");
+    return;
+  }
+
+  const whatsappMessage = `سلام، از طریق سایت SKATE SHOP پیام دارم.
+
+نام: ${name}
+شماره تماس: ${phone}
+ایمیل: ${email}
+
+پیام:
+${message}`;
+
+  const whatsappUrl = `https://wa.me/989332667801?text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
+
+  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+};
   const ANTON = { fontFamily: "'Anton', sans-serif" };
   const VAZIR = { fontFamily: "'Vazirmatn', sans-serif" };
       return (
@@ -886,43 +965,83 @@ setTimeout(() => {
               </div>
             </div>
 
-            {/* Form */}
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-white/35 text-xs mb-2">نام و نام خانوادگی</label>
-                  <input type="text" value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="نام شما"
-                    className="w-full bg-[#111] border border-white/[0.08] text-white px-4 py-3 text-sm focus:border-[#FFD100] focus:outline-none transition-colors placeholder:text-white/20" />
-                </div>
-                <div>
-                  <label className="block text-white/35 text-xs mb-2">شماره تماس</label>
-                  <input type="tel" value={form.phone} dir="ltr"
-                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    placeholder="09..."
-                    className="w-full bg-[#111] border border-white/[0.08] text-white px-4 py-3 text-sm focus:border-[#FFD100] focus:outline-none transition-colors placeholder:text-white/20" />
-                </div>
-              </div>
-              <div>
-                <label className="block text-white/35 text-xs mb-2">ایمیل</label>
-                <input type="email" value={form.email} dir="ltr"
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  placeholder="email@example.com"
-                  className="w-full bg-[#111] border border-white/[0.08] text-white px-4 py-3 text-sm focus:border-[#FFD100] focus:outline-none transition-colors placeholder:text-white/20" />
-              </div>
-              <div>
-                <label className="block text-white/35 text-xs mb-2">پیام شما</label>
-                <textarea value={form.message} rows={5}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  placeholder="پیام خود را بنویسید..."
-                  className="w-full bg-[#111] border border-white/[0.08] text-white px-4 py-3 text-sm focus:border-[#FFD100] focus:outline-none transition-colors placeholder:text-white/20 resize-none" />
-              </div>
-              <button type="submit"
-                className="w-full bg-[#FFD100] text-black font-bold py-4 text-sm hover:bg-yellow-300 transition-colors">
-                ارسال پیام
-              </button>
-            </form>
+       {/* Form */}
+<form onSubmit={handleContactSubmit} className="space-y-4">
+  <div className="grid grid-cols-2 gap-4">
+    <div>
+      <label className="block text-white/35 text-xs mb-2">
+        نام و نام خانوادگی
+      </label>
+
+      <input
+        type="text"
+        value={form.name}
+        onChange={(e) =>
+          setForm({ ...form, name: e.target.value })
+        }
+        placeholder="نام شما"
+        className="w-full bg-[#111] border border-white/[0.08] text-white px-4 py-3 text-sm focus:border-[#FFD100] focus:outline-none transition-colors placeholder:text-white/20"
+      />
+    </div>
+
+    <div>
+      <label className="block text-white/35 text-xs mb-2">
+        شماره تماس
+      </label>
+
+      <input
+        type="tel"
+        value={form.phone}
+        dir="ltr"
+        onChange={(e) =>
+          setForm({ ...form, phone: e.target.value })
+        }
+        placeholder="09..."
+        className="w-full bg-[#111] border border-white/[0.08] text-white px-4 py-3 text-sm focus:border-[#FFD100] focus:outline-none transition-colors placeholder:text-white/20"
+      />
+    </div>
+  </div>
+
+  <div>
+    <label className="block text-white/35 text-xs mb-2">
+      ایمیل
+    </label>
+
+    <input
+      type="email"
+      value={form.email}
+      dir="ltr"
+      onChange={(e) =>
+        setForm({ ...form, email: e.target.value })
+      }
+      placeholder="email@example.com"
+      className="w-full bg-[#111] border border-white/[0.08] text-white px-4 py-3 text-sm focus:border-[#FFD100] focus:outline-none transition-colors placeholder:text-white/20"
+    />
+  </div>
+
+  <div>
+    <label className="block text-white/35 text-xs mb-2">
+      پیام شما
+    </label>
+
+    <textarea
+      value={form.message}
+      rows={5}
+      onChange={(e) =>
+        setForm({ ...form, message: e.target.value })
+      }
+      placeholder="پیام خود را بنویسید..."
+      className="w-full bg-[#111] border border-white/[0.08] text-white px-4 py-3 text-sm focus:border-[#FFD100] focus:outline-none transition-colors placeholder:text-white/20 resize-none"
+    />
+  </div>
+
+  <button
+    type="submit"
+    className="w-full bg-[#FFD100] text-black font-bold py-4 text-sm hover:bg-yellow-300 transition-colors"
+  >
+    ارسال پیام
+  </button>
+</form>
           </div>
         </div>
       </section>
