@@ -410,7 +410,10 @@ ${message}`;
 
             {/* Actions */}
             <div className="flex items-center gap-1">
-              <button className="hidden sm:flex p-2.5 text-white/55 hover:text-white transition-colors">
+              <button
+  onClick={() => setSearchOpen((prev) => !prev)}
+  className="hidden sm:flex p-2.5 text-white/55 hover:text-white transition-colors"
+>
                 <Search className="w-4 h-4" />
               </button>
               <button onClick={() => setCartOpen(true)} className="relative p-2.5 text-white/55 hover:text-white transition-colors">
