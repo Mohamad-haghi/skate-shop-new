@@ -270,6 +270,15 @@ setTimeout(() => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+  if (searchQuery.trim() !== "") {
+    document.getElementById("products")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+}, [searchQuery]);
  useEffect(() => {
   const savedOrder = localStorage.getItem("skateShopLastOrder");
 
