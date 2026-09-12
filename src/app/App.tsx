@@ -317,26 +317,14 @@ setTimeout(() => {
 
   const totalItems = cartItems.reduce((s, i) => s + i.quantity, 0);
   const totalPrice = cartItems.reduce((s, i) => s + i.price * i.quantity, 0);
-  const normalizedSearch = searchQuery.trim().toLowerCase();
-
-const filtered = PRODUCTS.filter((p) => {
-  const matchesCategory =
-    activeCategory === "all" || p.category === activeCategory;
-
-  const searchableText = [
-    p.name,
-    p.nameEn,
-    p.description,
-  ]
-    .join(" ")
-    .toLowerCase();
-
-  const matchesSearch =
-    normalizedSearch === "" ||
-    searchableText.includes(normalizedSearch);
-
-  return matchesCategory && matchesSearch;
-});
+  const filtered =
+  searchQuery.trim() !== ""
+    ? PRODUCTS.filter((p) =>
+        p.name.toLowerCase().includes(searchQuery.trim().toLowerCase())
+      )
+    : activeCategory === "all"
+      ? PRODUCTS
+      : PRODUCTS.filter((p) => p.category === activeCategory);
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
