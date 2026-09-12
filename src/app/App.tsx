@@ -822,18 +822,18 @@ ${message}`;
           {/* Asymmetric grid row 1 */}
           <div className="grid grid-cols-3 grid-rows-2 gap-2 lg:gap-3 h-[280px] sm:h-[380px] lg:h-[540px]">
             <div className="col-span-2 row-span-2 relative overflow-hidden group bg-[#1A1A1A]">
-              <img src="/IMG_1093.jpeg"
+              <img src="/skate-shop-new/IMG_1093.jpeg"
                 alt="اسکیتباز در حال پرش"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <div className="relative overflow-hidden group bg-[#1A1A1A]">
-              <img src="/IMG_1094.jpeg"
+              <img src="/skate-shop-new/IMG_1094.jpeg"
                 alt="اسکیتباز شبانه"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
             <div className="relative overflow-hidden group bg-[#1A1A1A]">
-              <img src="/IMG_1095.jpeg"
+              <img src="/skate-shop-new/IMG_1095.jpeg"
                 alt="تریک حرفه‌ای"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
@@ -842,12 +842,12 @@ ${message}`;
           {/* Row 2 */}
           <div className="grid grid-cols-3 gap-2 lg:gap-3 mt-2 lg:mt-3">
             <div className="relative overflow-hidden group bg-[#1A1A1A] h-36 lg:h-52">
-              <img src="/IMG_1096.jpeg"
+              <img src="/skate-shop-new/IMG_1096.jpeg"
                 alt="تریک روی پله"
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             </div>
             <div className="col-span-2 relative overflow-hidden group bg-[#1A1A1A] h-36 lg:h-52">
-              <img src="/IMG_1097.jpeg"
+              <img src="/skate-shop-new/IMG_1097.jpeg"
                 alt="دو اسکیتباز شبانه"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 flex items-end p-5 bg-gradient-to-t from-black/60 to-transparent">
