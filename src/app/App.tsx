@@ -660,7 +660,7 @@ ${message}`;
         {/* Background */}
         <div className="absolute inset-0 bg-[#111]">
           <img
-            src="https://images.unsplash.com/photo-1547198152-dde291a08c45?w=1600&h=900&fit=crop&auto=format"
+            src="/skate-shop-new/IMG_1093.jpeg"
             alt="اسکیتباز در حال پرش"
             className="w-full h-full object-cover opacity-45"
           />
@@ -871,7 +871,7 @@ ${message}`;
             {/* Image */}
             <div className="relative">
               <div className="relative aspect-[3/4] max-w-sm mx-auto lg:ml-0 bg-[#1A1A1A] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1765979275415-c02bbea40456?w=600&h=800&fit=crop&auto=format"
+                <img src="/skate-shop-new/IMG_1098.jpeg"
                   alt="اسکیتباز"
                   className="w-full h-full object-cover" />
                 {/* Yellow corner badge */}
