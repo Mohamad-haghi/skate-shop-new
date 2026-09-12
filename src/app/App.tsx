@@ -317,13 +317,23 @@ setTimeout(() => {
 
   const totalItems = cartItems.reduce((s, i) => s + i.quantity, 0);
   const totalPrice = cartItems.reduce((s, i) => s + i.price * i.quantity, 0);
-  const filtered = PRODUCTS.filter((p) => {
+  const normalizedSearch = searchQuery.trim().toLowerCase();
+
+const filtered = PRODUCTS.filter((p) => {
   const matchesCategory =
     activeCategory === "all" || p.category === activeCategory;
 
+  const searchableText = [
+    p.name,
+    p.nameEn,
+    p.description,
+  ]
+    .join(" ")
+    .toLowerCase();
+
   const matchesSearch =
-    searchQuery.trim() === "" ||
-    p.name.toLowerCase().includes(searchQuery.trim().toLowerCase());
+    normalizedSearch === "" ||
+    searchableText.includes(normalizedSearch);
 
   return matchesCategory && matchesSearch;
 });
