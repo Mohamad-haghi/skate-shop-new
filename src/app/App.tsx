@@ -45,56 +45,56 @@ const PRODUCTS: Product[] = [
     id: 1, name: "دک اسکیت پرو", nameEn: "Pro Series Deck",
     description: "دک حرفه‌ای با چوب افرا ۷ لایه کانادایی. طراحی اختصاصی برند اسکیت شاپ با سطح شنی کیفیت بالا. مناسب برای تریک‌های سطح بالا و اسکیتبازان حرفه‌ای.",
     price: 1850000, originalPrice: 2200000,
-    image: "https://images.unsplash.com/photo-1547447134-cd3f5c716030?w=600&h=750&fit=crop&auto=format",
+    image: "/skate-shop-new/IMG_1085.jpeg"
     category: "decks", badge: "پرفروش", rating: 4.8, reviews: 124,
   },
   {
     id: 2, name: "ست کامل استریت", nameEn: "Street Complete Setup",
     description: "پکیج کامل شامل دک ۸ اینچ، ترک تیتانیوم، چرخ ۵۲mm و بیرینگ ABEC-9. آماده برای سواری از همان روز اول. بهترین انتخاب برای تازه‌کاران.",
     price: 3200000,
-    image: "https://images.unsplash.com/photo-1536318431364-5cc762cfc8ec?w=600&h=750&fit=crop&auto=format",
+    image: "/skate-shop-new/IMG_1086.jpeg"
     category: "decks", badge: "جدید", rating: 4.9, reviews: 87,
   },
   {
     id: 3, name: "کفش اسکیت استریت", nameEn: "Street Skate Shoes",
     description: "کفش اسکیت حرفه‌ای با رویه چرم مصنوعی و تخت ولکانیزه مقاوم. طراحی ارگونومیک برای حداکثر کنترل روی دک. موجود از سایز ۳۶ تا ۴۷.",
     price: 2100000, originalPrice: 2500000,
-    image: "https://images.unsplash.com/photo-1573554943001-ac2d0211bd90?w=600&h=750&fit=crop&auto=format",
+    image: "/skate-shop-new/IMG_1087.jpeg"
     category: "shoes", rating: 4.7, reviews: 203,
   },
   {
     id: 4, name: "چرخ کریستال پرو", nameEn: "Crystal Pro Wheels",
     description: "ست ۴ عدد چرخ پلی‌اورتان با سختی ۱۰۱A. قطر ۵۲mm، عرض ۳۲mm. مناسب برای سطوح استخر و استریت. لغزندگی پایین و سرعت بالا.",
     price: 650000,
-    image: "https://images.unsplash.com/photo-1564982752979-3f7bc974d29a?w=600&h=750&fit=crop&auto=format",
+    image: "/skate-shop-new/IMG_1088.jpeg"
     category: "wheels", badge: "۲۵٪ تخفیف", rating: 4.6, reviews: 156,
   },
   {
     id: 5, name: "هلمت پرو شهری", nameEn: "Urban Pro Helmet",
     description: "هلمت سبک با پوشش EPS و رویه ABS مقاوم. دارای گواهینامه ایمنی CE اروپا. سیستم تهویه هوشمند برای راحتی در فصل گرما.",
     price: 980000,
-    image: "https://images.unsplash.com/photo-1601247309037-a3e434b07906?w=600&h=750&fit=crop&auto=format",
+    image: "/skate-shop-new/IMG_1089.jpeg"
     category: "protection", rating: 4.5, reviews: 92,
   },
   {
     id: 6, name: "تی‌شرت گرافیکی", nameEn: "Graphic Tee",
     description: "تی‌شرت با پارچه ۱۰۰٪ نخ پنبه ارگانیک. طرح گرافیکی اختصاصی اسکیت شاپ با چاپ سیلک‌اسکرین. موجود در رنگ‌های مشکی، سفید و زرد.",
     price: 450000,
-    image: "https://images.unsplash.com/photo-1487051224065-0a68403c2450?w=600&h=750&fit=crop&auto=format",
+    image: "/skate-shop-new/IMG_1090.jpeg"
     category: "apparel", badge: "نسخه محدود", rating: 4.9, reviews: 67,
   },
   {
     id: 7, name: "دک گالری آرت", nameEn: "Gallery Art Deck",
     description: "دک هنری با چاپ گرافیکی دیجیتال UV روی چوب افرا. نسخه محدود ۵۰ عدد. مناسب برای کلکسیون و دکوراسیون فضاهای خلاقانه.",
     price: 1200000,
-    image: "https://images.unsplash.com/photo-1575321539738-12cdc5ee584e?w=600&h=750&fit=crop&auto=format",
+    image: "/skate-shop-new/IMG_1091.jpeg"
     category: "decks", rating: 4.4, reviews: 45,
   },
   {
     id: 8, name: "کوله اسکیتر پرو", nameEn: "Skater Pro Backpack",
     description: "کوله‌پشتی ضدآب ۳۰ لیتر با جای اختصاصی دک اسکیت. جیب لپ‌تاپ پدینگ‌دار ۱۵ اینچ. یراق‌آلات مقاوم و قابل تنظیم.",
     price: 870000, originalPrice: 1100000,
-    image: "https://images.unsplash.com/photo-1723132798533-8a18e89b5e90?w=600&h=750&fit=crop&auto=format",
+    image: "/skate-shop-new/IMG_1092.jpeg"
     category: "accessories", rating: 4.7, reviews: 89,
   },
 ];
